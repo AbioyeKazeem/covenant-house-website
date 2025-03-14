@@ -1,0 +1,92 @@
+import { useState, useEffect } from "react";
+
+const AdminLogin = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Detect system dark mode
+  useEffect(() => {
+    const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setIsDarkMode(darkMode);
+  }, []);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !password) {
+      alert("Please fill in all fields!");
+      return;
+    }
+    console.log("Logging in with:", { email, password });
+  };
+
+  return (
+    <div
+      className={`flex h-screen ${
+        isDarkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"
+      }`}>
+
+      {/* Left Side of the Login Form */}
+      <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-8">
+        <h2 className="text-3xl font-bold mb-6 animate-fadeIn">Sign In</h2>
+
+        <form className="w-full max-w-md" onSubmit={handleSubmit}>
+
+          <div className="mb-4">
+            <label className="block text-lg font-medium">Email</label>
+            <input
+              type="email"
+              className="w-full px-4 py-3 border rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-800 dark:border-gray-700"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+
+          <div className="mb-4 relative">
+            <label className="block text-lg font-medium">Password</label>
+            <input
+              type={showPassword ? "text" : "password"}
+              className="w-full px-4 py-3 border rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-800 dark:border-gray-700"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}/>
+            <button
+              type="button"
+              className="absolute top-9 right-3 text-gray-600 dark:text-gray-400"
+              onClick={() => setShowPassword(!showPassword)}>
+              {showPassword ? "🙈" : "👁"}
+            </button>
+          </div>
+
+          {/* Remember Me & Login Button */}
+          <div className="flex items-center justify-between mb-4">
+            <label className="flex items-center text-lg">
+              <input type="checkbox" className="mr-2" />
+              Remember me
+            </label>
+          </div>
+
+          <button
+            type="submit"
+            className="w-full bg-blue-500 text-white py-3 text-lg rounded-full hover:bg-green-700 transition duration-300">
+            Log In
+          </button>
+        </form>
+      </div>
+
+       {/* right Side of the Login Form */}
+      <div className="hidden md:flex w-1/2 bg-orange-400 text-white items-center justify-center p-8">
+        <div className="text-center animate-slideIn">
+          <h2 className="text-3xl font-bold">Welcome to Admin Login!</h2>
+          <p className="mt-2 text-lg">
+            "Behold, I am the LORD, the God of all flesh: is there anything too hard for me?" - Jeremiah 32:27
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AdminLogin;
