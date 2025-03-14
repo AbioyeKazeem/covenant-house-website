@@ -1,7 +1,20 @@
-import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AdminLayout from "./components/admin/adminLayout"; 
+import UploadSlider from "./components/admin/adminPages/uploadSliders";
+import UploadSermon from "./components/admin/adminPages/uploadSermon";
 
-const App: React.FC = () => {
-  return <div>App Component</div>;
-};
+function App() {
+  return (
+    <Router>
+      <Routes>
+  <Route path="/admin" element={<AdminLayout />}>
+    <Route path="upload-slider" element={<UploadSlider />} />
+    <Route path="upload-sermon" element={<UploadSermon />} />
+  </Route>
+</Routes>
 
-export default App; // Ensure this line is present
+    </Router>
+  );
+}
+
+export default App;
