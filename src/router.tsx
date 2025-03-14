@@ -8,7 +8,7 @@ function AppRouter() {
   return (
     <Routes>
        <Route path="/login" element={<AdminLogin />} />
-       <Route path="/dashboard" element={<AdminLayout />}>
+       <Route path="/admin" element={<AdminLayout />}>
         {/* <Route path="upload-slider" element={<UploadSlider />} />
         <Route path="upload-sermon" element={<UploadSermon />} />
         <Route path="upload-event" element={<UploadEvent />} /> */}
