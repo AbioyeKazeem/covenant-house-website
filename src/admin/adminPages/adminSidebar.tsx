@@ -11,7 +11,7 @@ const AdminSidebar: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
         <Link to="/admin/upload-slider" className="flex items-center gap-3 py-2 px-4 text-lg font-medium hover:bg-gray-700 rounded border-b border-gray-300">
           <Image size={22} /> Upload Slider
         </Link>
-        <Link to="/admin/upload-sermon" className="flex items-center gap-3 py-2 px-4 text-lg font-medium hover:bg-gray-700 rounded border-b border-gray-300">
+        <Link to="/admin/upload-pastordesk" className="flex items-center gap-3 py-2 px-4 text-lg font-medium hover:bg-gray-700 rounded border-b border-gray-300">
           <Mic size={22} /> Upload Pst's Desk
         </Link>
         <Link to="/admin/upload-event" className="flex items-center gap-3 py-2 px-4 text-lg font-medium hover:bg-gray-700 rounded border-b border-gray-300">
