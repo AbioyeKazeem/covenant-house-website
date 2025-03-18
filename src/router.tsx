@@ -12,9 +12,9 @@ function AppRouter() {
        <Route path="/signup" element={<AdminSignup/>} />
        <Route path="/login" element={<AdminLogin />} />
        <Route path="/admin" element={<AdminLayout />}>
-       <Route path="upload-slider" element={<SliderUpload />} />
-       <Route path="upload-pastordesk" element={<PastorDeskUpload />} />
-       <Route path="upload-event" element={<EventUpload />} /> 
+      <Route path="upload-slider" element={<SliderUpload />} />
+      <Route path="upload-pastordesk" element={<PastorDeskUpload />} />
+      <Route path="upload-event" element={<EventUpload />} />
       </Route>
     </Routes>
   );
