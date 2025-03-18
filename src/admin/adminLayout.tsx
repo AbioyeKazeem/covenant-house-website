@@ -11,19 +11,16 @@ const AdminLayout = () => {
   return (
     <div className="flex h-screen flex-col md:flex-row">
       
-      {/* Sidebar */}
       <AdminSidebar isOpen={sidebarOpen} />
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         
-        {/* Header */}
         <AdminHeader toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
 
         {/* Page Content */}
         <main className="flex-1 p-4 bg-gray-200 overflow-auto">
           
-          {/* Show Welcome Message Only on /admin */}
           {location.pathname === "/admin" && (
             <div className="flex items-center justify-center min-h-screen pt-10">
               <div className="text-center">
@@ -43,7 +40,6 @@ const AdminLayout = () => {
           <Outlet />
         </main>
 
-        {/* Footer */}
         <AdminFooter />
       </div>
     </div>

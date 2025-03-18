@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import AdminSignup from "./admin/adminPages/adminSignUp";
 import AdminLayout from "./admin/adminLayout";
 import AdminLogin from "./admin/adminLogin";
 import SliderUpload from "./admin/adminPages/sliderUpload";
@@ -8,6 +9,7 @@ import EventUpload from "./admin/adminPages/eventUpload";
 function AppRouter() {
   return (
     <Routes>
+       <Route path="/signup" element={<AdminSignup/>} />
        <Route path="/login" element={<AdminLogin />} />
        <Route path="/admin" element={<AdminLayout />}>
        <Route path="upload-slider" element={<SliderUpload />} />

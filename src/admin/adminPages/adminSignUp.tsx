@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 
-const AdminLogin = () => {
+const AdminSignup = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Detect system dark mode
   useEffect(() => {
     const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
     setIsDarkMode(darkMode);
@@ -14,11 +16,15 @@ const AdminLogin = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !password) {
+    if (!name || !email || !password || !confirmPassword) {
       alert("Please fill in all fields!");
       return;
     }
-    console.log("Logging in with:", { email, password });
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+    console.log("Signing up with:", { name, email, password });
   };
 
   return (
@@ -27,11 +33,22 @@ const AdminLogin = () => {
         isDarkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"
       }`}>
 
-      {/* Left Side of the Login Form */}
+      {/* Left Side of the Signup Form */}
       <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-8">
-        <h2 className="text-3xl font-bold mb-6 animate-fadeIn">Sign In</h2>
+        <h2 className="text-3xl font-bold mb-6 animate-fadeIn">Create an Account</h2>
 
         <form className="w-full max-w-md" onSubmit={handleSubmit}>
+
+          <div className="mb-4">
+            <label className="block text-lg font-medium">Name</label>
+            <input
+              type="text"
+              className="w-full px-4 py-3 border rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-800 dark:border-gray-700"
+              placeholder="Enter your name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
 
           <div className="mb-4">
             <label className="block text-lg font-medium">Email</label>
@@ -51,7 +68,8 @@ const AdminLogin = () => {
               className="w-full px-4 py-3 border rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-800 dark:border-gray-700"
               placeholder="Enter your password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}/>
+              onChange={(e) => setPassword(e.target.value)}
+            />
             <button
               type="button"
               className="absolute top-9 right-3 text-gray-600 dark:text-gray-400"
@@ -60,28 +78,37 @@ const AdminLogin = () => {
             </button>
           </div>
 
-          {/* Remember Me & Login Button */}
-          <div className="flex items-center justify-between mb-4">
-            <label className="flex items-center text-lg">
-              <input type="checkbox" className="mr-2" />
-              Remember me
-            </label>
+          <div className="mb-4 relative">
+            <label className="block text-lg font-medium">Confirm Password</label>
+            <input
+              type={showConfirmPassword ? "text" : "password"}
+              className="w-full px-4 py-3 border rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-800 dark:border-gray-700"
+              placeholder="Confirm your password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+            <button
+              type="button"
+              className="absolute top-9 right-3 text-gray-600 dark:text-gray-400"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
+              {showConfirmPassword ? "🙈" : "👁"}
+            </button>
           </div>
 
           <button
             type="submit"
             className="w-full bg-blue-500 text-white py-3 text-lg rounded-full hover:bg-green-700 transition duration-300">
-            Log In
+            Sign Up
           </button>
         </form>
       </div>
 
-       {/* right Side of the Login Form */}
+      {/* Right Side of the Signup Form */}
       <div className="hidden md:flex w-1/2 bg-darkslateblue text-white items-center justify-center p-8">
         <div className="text-center animate-slideIn">
-          <h2 className="text-3xl font-bold">Welcome to Admin Login!</h2>
+          <h2 className="text-3xl font-bold">Join Us!</h2>
           <p className="mt-2 text-lg">
-            "Behold, I am the LORD, the God of all flesh: is there anything too hard for me?" - Jeremiah 32:27
+            "With God all things are possible." - Matthew 19:26
           </p>
         </div>
       </div>
@@ -89,4 +116,4 @@ const AdminLogin = () => {
   );
 };
 
-export default AdminLogin;
+export default AdminSignup;
