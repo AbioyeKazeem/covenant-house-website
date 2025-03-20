@@ -5,17 +5,19 @@ import AdminLogin from "./admin/adminLogin";
 import SliderUpload from "./admin/adminPages/sliderUpload";
 import PastorDeskUpload from "./admin/adminPages/pastorDeskUpload";
 import EventUpload from "./admin/adminPages/eventUpload";
+import HomePage from "./pages/home";
 
 function AppRouter() {
   return (
     <Routes>
-       <Route path="/signup" element={<AdminSignup/>} />
-       <Route path="/login" element={<AdminLogin />} />
-       <Route path="/admin" element={<AdminLayout />}>
-      <Route path="upload-slider" element={<SliderUpload />} />
-      <Route path="upload-pastordesk" element={<PastorDeskUpload />} />
-      <Route path="upload-event" element={<EventUpload />} />
+      <Route path="/signup" element={<AdminSignup />} />
+      <Route path="/login" element={<AdminLogin />} />
+      <Route path="/admin" element={<AdminLayout />}>
+        <Route path="upload-slider" element={<SliderUpload />} />
+        <Route path="upload-pastordesk" element={<PastorDeskUpload />} />
+        <Route path="upload-event" element={<EventUpload />} />
       </Route>
+      <Route path="/" element={<HomePage />} />
     </Routes>
   );
 }
