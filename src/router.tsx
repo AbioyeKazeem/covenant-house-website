@@ -9,6 +9,7 @@ import HomePage from "./pages/home";
 import ValuesPage from "./pages/OurValues";
 import OurBelief from "./pages/OurBelief";
 import OurPriorities from "./pages/OurPriorities";
+import AdminUsers from "./admin/adminPages/adminManagement";
 
 function AppRouter() {
   return (
@@ -16,6 +17,7 @@ function AppRouter() {
       <Route path="/signup" element={<AdminSignup />} />
       <Route path="/login" element={<AdminLogin />} />
       <Route path="/admin" element={<AdminLayout />}>
+      <Route path="admin-management" element={<AdminUsers />} />
         <Route path="upload-slider" element={<SliderUpload />} />
         <Route path="upload-pastordesk" element={<PastorDeskUpload />} />
         <Route path="upload-event" element={<EventUpload />} />
