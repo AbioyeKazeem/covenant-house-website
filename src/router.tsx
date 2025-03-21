@@ -6,6 +6,9 @@ import SliderUpload from "./admin/adminPages/sliderUpload";
 import PastorDeskUpload from "./admin/adminPages/pastorDeskUpload";
 import EventUpload from "./admin/adminPages/eventUpload";
 import HomePage from "./pages/home";
+import ValuesPage from "./pages/OurValues";
+import OurBelief from "./pages/OurBelief";
+import OurPriorities from "./pages/OurPriorities";
 
 function AppRouter() {
   return (
@@ -18,6 +21,9 @@ function AppRouter() {
         <Route path="upload-event" element={<EventUpload />} />
       </Route>
       <Route path="/" element={<HomePage />} />
+      <Route path="/values" element={<ValuesPage />} />
+      <Route path="/our-beliefs" element={<OurBelief />} />
+      <Route path="/our-priorities" element={<OurPriorities />} />
     </Routes>
   );
 }

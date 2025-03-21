@@ -1,21 +1,44 @@
 import Slider from "../../components/slider";
-import Header from "../../components/header";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ChurchSection from "../../components/ChurchSection";
 import ActivitiesSection from "../../components/ActivitiesSection";
 import WorshipExperience from "../../components/WorshipExperience";
-import Footer from "../../components/footer";
+import MainLayout from "../../MainLayout";
+import PrayerRequest from "../../components/PrayerRequest";
 
 const HomePage = () => {
+  const [showPrayerRequest, setShowPrayerRequest] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowPrayerRequest(true);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    const activitiesSection = document.getElementById("activities-section");
+    if (activitiesSection) {
+      observer.observe(activitiesSection);
+    }
+
+    return () => {
+      if (activitiesSection) {
+        observer.unobserve(activitiesSection);
+      }
+    };
+  }, []);
+
   return (
-    <div className="max-w-[1380px] mx-auto">
-      <Header />
+    <MainLayout>
       <Slider />
       <ChurchSection />
       <ActivitiesSection />
       <WorshipExperience />
-      <Footer />
-    </div>
+      {showPrayerRequest && <PrayerRequest />}
+    </MainLayout>
   );
 };
 

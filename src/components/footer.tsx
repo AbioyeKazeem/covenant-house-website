@@ -1,5 +1,7 @@
 import React from "react";
-import PhoneIcon from "../assets/icons/phone.svg";
+import { GrPhone } from "react-icons/gr";
+import { MdMailOutline } from "react-icons/md";
+import { IoLocationOutline } from "react-icons/io5";
 
 const Footer = () => {
   return (
@@ -39,30 +41,32 @@ const Footer = () => {
         {/* Contact Information Section */}
         <div className="max-w-[542px] w-full bg-white text-[#2D2463] p-6 rounded-tl-lg rounded-bl-lg flex flex-col justify-between">
           <h3 className="font-bold uppercase pb-2">Contact Information</h3>
-          <p className="mt-4 text-sm">
+          <p className="mt-4 text-sm font-poppins max-w-[427px]">
             We'd love to hear from you! Whether you have a question, need
             prayer, or want to visit us, feel free to reach out. We're here for
             you.
           </p>
           <div className="mt-4 space-y-4">
             <div className="flex gap-3">
-              <img src="/email.png" alt="Email" />
-
-              <div>
+              <>
+                <MdMailOutline />
+              </>
+              <div className="font-poppins">
                 <p className="font-bold">Email</p>
                 <p>rccgCH123@gmail.com</p>
               </div>
             </div>
             <div className="flex gap-3">
-              <PhoneIcon />
-              <div>
+              {/* <GrPhone /> */}
+              <img src="/icons/phone.svg" alt="Logo" />
+              <div className="font-poppins">
                 <p className="font-bold">Phone</p>
                 <p>+234 1234 567 78</p>
               </div>
             </div>
             <div className="flex gap-3">
-              <img src="/location.png" alt="Location" height={2} />
-              <div>
+              <IoLocationOutline />
+              <div className="font-poppins">
                 <p className="font-bold">Location</p>
                 <p>123 Street, Lagos, Nigeria.</p>
               </div>

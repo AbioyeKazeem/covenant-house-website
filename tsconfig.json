@@ -12,7 +12,10 @@
     "strict": true,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": ["react", "react-dom", "jest"],
+    "noImplicitAny": false,
+    "resolveJsonModule": true
   },
   "include": ["src"]
 }

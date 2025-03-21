@@ -1,21 +1,27 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const cards = [
   {
     image: "/values.png",
     title: "Our Values",
+    link: "/values",
   },
   {
     image: "/beliefs.png",
     title: "What We Believe",
+    link: "/our-beliefs",
   },
   {
     image: "/priorities.png",
     title: "Our Priorities",
+    link: "/our-priorities",
   },
 ];
 
 const ChurchSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="bg-[#DCEBFC] py-16 text-center">
       {/* Section Title */}
@@ -42,7 +48,10 @@ const ChurchSection = () => {
               alt={card.title}
               className="w-full h-[275px] object-cover rounded-lg"
             />
-            <button className="mt-4 border-2 border-[#2F2860] text-[#2F2860] px-6 py-2 rounded-md text-sm font-semibold hover:bg-[#2F2860] hover:text-white transition">
+            <button
+              onClick={() => navigate(card.link)}
+              className="mt-4 border-2 border-[#2F2860] text-[#2F2860] px-6 py-2 rounded-md text-sm font-semibold hover:bg-[#2F2860] hover:text-white transition"
+            >
               {card.title}
             </button>
           </div>
