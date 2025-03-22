@@ -29,7 +29,7 @@ const ActivitiesSection = () => {
       id="activities-section"
       className="bg-[#1E1B4B] text-white py-12 px-6"
     >
-      <div className="px-[93px] grid grid-cols-1 md:grid-cols-4 gap-6 p-6">
+      <div className="lg:px-[93px] grid grid-cols-1 md:grid-cols-4 gap-6 p-6">
         {activities.map((activity, index) => (
           <div
             key={index}

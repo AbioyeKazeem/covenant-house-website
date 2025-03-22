@@ -1,27 +1,26 @@
 import React from "react";
-import { GrPhone } from "react-icons/gr";
 import { MdMailOutline } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
 
 const Footer = () => {
   return (
     <footer className="bg-[#2F2860] text-white py-10">
-      <div className="flex flex-col justify-between md:flex-row gap-8">
+      <div className="flex flex-col justify-between lg:flex-row gap-8">
         {/* Key Ministries & Quick Links Section */}
-        <div className="max-w-[665px] w-full">
-          <div className="bg-white text-[#2F2860] pl-[98px] py-[8px] flex justify-between">
+        <div className="max-w-[665px] w-full px-2 md:px-0">
+          <div className="bg-white text-[#2F2860] md:pl-[98px] py-[8px] flex justify-between">
             <h3 className="w-1/2 font-bold uppercase text-left ">
               Key Ministries
             </h3>
             <h3 className="w-1/2 font-bold uppercase text-left">Quick Links</h3>
           </div>
-          <div className="grid grid-cols-2 pl-[98px] mt-[28px]">
+          <div className="grid grid-cols-2 md:pl-[98px] mt-[28px]">
             <ul className="space-y-[12px] ">
               <li>Men Ministry</li>
               <li>Women Ministry</li>
               <li>Youth Ministry</li>
               <li>Children Ministry</li>
-              <button className="mt-[24px] bg-[#ABB8E2ED] text-[#FEFDFF] px-4 py-2 rounded ">
+              <button className="mt-[24px] text-sm md:text-lg bg-[#ABB8E2ED] text-[#FEFDFF] px-1 md:px-4 py-2 rounded ">
                 View All Ministries
               </button>
             </ul>
@@ -31,7 +30,7 @@ const Footer = () => {
               <li>Open Heavens</li>
               <li>RCCG Docs</li>
               <li>Sunday School Manual</li>
-              <button className="mt-[24px] bg-[#ABB8E2ED] text-[#FEFDFF] px-4 py-2 rounded ">
+              <button className="mt-[24px] bg-[#ABB8E2ED] text-sm md:text-lg text-[#FEFDFF] px-2 md:px-4 px-4 py-2 rounded ">
                 View All Resources
               </button>
             </ul>

@@ -23,9 +23,9 @@ const ChurchSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-[#DCEBFC] py-16 text-center">
+    <section className="bg-[#DCEBFC] py-16 text-center px-2">
       {/* Section Title */}
-      <div className="mb-[200px]">
+      <div className="md:mb-[200px]">
         <h2 className="text-3xl md:text-4xl font-bold text-[#2F2860]">
           The Church of God
         </h2>
@@ -40,7 +40,7 @@ const ChurchSection = () => {
           <div
             key={index}
             className={`bg-white shadow-lg rounded-xl p-4 w-[280px] md:w-[300px] text-center transition ${
-              index === 1 ? "-mt-[250px]" : "mt-0"
+              index === 1 ? "md:-mt-[250px]" : "mt-0"
             }`}
           >
             <img

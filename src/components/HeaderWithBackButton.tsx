@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 interface HeaderProps {
   title: string;
-  description: string;
+  description?: string;
 }
 
 const HeaderWithBackButton: React.FC<HeaderProps> = ({
@@ -13,7 +13,7 @@ const HeaderWithBackButton: React.FC<HeaderProps> = ({
   const navigate = useNavigate();
 
   return (
-    <div className="flex px-[93px]">
+    <div className="flex md:px-[93px] px-4 flex-col md:flex-row">
       {/* Back Button */}
       <button
         onClick={() => navigate(-1)}

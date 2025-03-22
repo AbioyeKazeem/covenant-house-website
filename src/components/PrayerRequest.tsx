@@ -10,26 +10,36 @@ const PrayerRequest = () => {
         initial={{ x: "-100%", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="fixed top-1/3 left-0 bg-white shadow-lg p-6 rounded-r-lg w-[280px] md:w-[350px] text-center z-50"
+        className="fixed top-[15%]  md:top-1  left-0  shadow-lg  rounded-r-lg  md:w-[592.7px] text-center z-50"
       >
-        <button
-          onClick={() => setIsVisible(false)}
-          className="absolute top-2 right-2 text-gray-700 text-xl"
+        <div
+          className="relative w-full h-full py-[117px] px-[53px] bg-cover bg-center"
+          style={{
+            backgroundImage: `url('/prayer-request.jpeg')`,
+          }}
         >
-          ✖
-        </button>
-        <h3 className="font-semibold text-lg italic text-gray-900">
-          Need Prayer <br /> or <br />{" "}
-          <span className="font-bold">Spiritual Support?</span>
-        </h3>
-        <p className="text-gray-700 text-sm mt-2">
-          No matter what you're going through, we believe in the power of
-          prayer. Our pastors and prayer team are here to listen, support, and
-          stand with you in faith.
-        </p>
-        <button className="mt-4 px-4 py-2 bg-[#1E1B4B] text-white text-sm rounded-md hover:bg-[#3a3678] transition">
-          Request Prayer
-        </button>
+          <div className="absolute inset-0 bg-[#441a30] opacity-80" />
+          <button
+            onClick={() => setIsVisible(false)}
+            className="absolute text-white top-4 right-6  text-2xl"
+          >
+            ✖
+          </button>
+          <div className="relative px-[57px] pt-[36px] pb-[69px] font-medium font-poppins text-white  rounded-lg bg-white/15 backdrop-blur-sm text-center shadow-lg">
+            <h3 className=" text-2xl italic font-bold ">
+              Need Prayer <br /> or <br />{" "}
+              <span className="font-bold">Spiritual Support?</span>
+            </h3>
+            <p className=" text-lg mt-2">
+              No matter what you're going through, we believe in the power of
+              prayer. Our pastors and prayer team are here to listen, support,
+              and stand with you in faith.
+            </p>
+            <button className="mt-4 px-4 py-2 border border-white text-white text-sm rounded-md  transition">
+              Request Prayer
+            </button>
+          </div>
+        </div>
       </motion.div>
     )
   );

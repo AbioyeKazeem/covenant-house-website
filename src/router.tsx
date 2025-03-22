@@ -9,6 +9,8 @@ import HomePage from "./pages/home";
 import ValuesPage from "./pages/OurValues";
 import OurBelief from "./pages/OurBelief";
 import OurPriorities from "./pages/OurPriorities";
+import MissionPage from "./pages/OurMission";
+import OurLegacy from "./pages/OurLegacy";
 
 function AppRouter() {
   return (
@@ -24,6 +26,8 @@ function AppRouter() {
       <Route path="/values" element={<ValuesPage />} />
       <Route path="/our-beliefs" element={<OurBelief />} />
       <Route path="/our-priorities" element={<OurPriorities />} />
+      <Route path="/our-mission" element={<MissionPage />} />
+      <Route path="/our-legacy" element={<OurLegacy />} />
     </Routes>
   );
 }
