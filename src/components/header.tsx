@@ -145,7 +145,7 @@
 // export default Header;
 
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi"; // Icons for mobile menu
 
 const Header = () => {
@@ -156,11 +156,17 @@ const Header = () => {
     <header className="w-full bg-[#FDFBFE]">
       {/* Logo & Mobile Menu */}
       <div className="flex justify-between items-center px-4 font-medium md:px-[93px] py-[16px]">
-        <div className="hidden md:block">PRAYER REQUEST | OUR BELIEFS</div>
+        <div className="hidden md:block text-[#100E22]">
+        <Link to="#" className="hover:text-lightpurple">PRAYER REQUEST</Link> |  
+        <Link to="#" className="hover:text-lightpurple"> OUR BELIEFS</Link>
+        </div>
         <div>
           <img src="/logo.png" alt="Church Logo" className="" />
         </div>
-        <div className="hidden md:block text-[#100E22]">rPAD | ADMIN</div>
+        <div className="hidden md:block text-[#100E22]">
+        <Link to="#" className="hover:text-lightpurple">rPAD</Link> |  
+        <Link to="/login" className="hover:text-lightpurple"> ADMIN</Link>
+        </div>
 
         {/* Mobile Menu Button */}
         <button
