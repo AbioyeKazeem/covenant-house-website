@@ -153,20 +153,14 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="w-full border-gray-300 bg-gray-100">
-      {/* Top Bar */}
-      <div className="hidden md:flex justify-between items-center py-2 text-xs font-semibold text-[#000000] border-[#2F2860] border-b-2 px-4 md:px-[93px]">
-        <div>PRAYER REQUEST | OUR BELIEFS</div>
-      </div>
-
+    <header className="w-full bg-[#FDFBFE]">
       {/* Logo & Mobile Menu */}
-      <div className="flex justify-between items-center px-4 md:px-[93px] py-[16px]">
+      <div className="flex justify-between items-center px-4 font-medium md:px-[93px] py-[16px]">
+        <div className="hidden md:block">PRAYER REQUEST | OUR BELIEFS</div>
         <div>
           <img src="/logo.png" alt="Church Logo" className="" />
         </div>
-        <div className="hidden md:block text-[#100E22]">
-          rPAD | IN THE COMMUNITY
-        </div>
+        <div className="hidden md:block text-[#100E22]">rPAD | ADMIN</div>
 
         {/* Mobile Menu Button */}
         <button
@@ -180,7 +174,7 @@ const Header = () => {
       {/* Main Navbar */}
       <div className="bg-[#2F2860] hidden md:flex py-2  items-center relative">
         {/* Navigation - Desktop */}
-        <nav className="hidden md:flex flex-1 justify-center items-center space-x-6 lg:space-x-8 text-sm font-semibold">
+        <nav className="hidden md:flex flex-1 justify-center items-center space-x-6 lg:space-x-10 text-sm font-semibold">
           {[
             { name: "HOME", path: "/" },
             { name: "THE CHURCH", path: "/church" },
