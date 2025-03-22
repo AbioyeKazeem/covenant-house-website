@@ -70,7 +70,7 @@ const AdminLogin = () => {
 
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-3 text-lg rounded-full hover:bg-green-700 transition duration-300">
+            className="w-full bg-lightpurple  text-white py-3 text-lg rounded-full hover:bg-orange-500 transition duration-300">
             Log In
           </button>
         </form>

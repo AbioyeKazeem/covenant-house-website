@@ -4,7 +4,8 @@ const config = {
   theme: {
     extend: {
       colors: {
-        darkslateblue: "#483D8B", // Custom color definition
+        darkslateblue: "#483D8B",
+        lightpurple : "#9370DB",
       },
       fontFamily: {
         roboto: ["Roboto Mono", "monospace"],

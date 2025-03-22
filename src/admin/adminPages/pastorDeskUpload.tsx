@@ -90,17 +90,18 @@ const PastorDeskUpload = () => {
   return (
     <div className="p-10 max-w-5xl mx-auto bg-white shadow-md rounded-xl w-full">
       <h2 className="text-3xl font-bold mb-6 text-center">Upload Pastor Desk Message</h2>
-      <div className="space-y-4">
-        <input type="file" accept="image/*" onChange={handleFileChange} className="border p-3 w-full rounded-lg" />
-        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Title" className="border p-3 w-full rounded-lg" />
-        <div className="grid grid-cols-2 gap-4">
-          <input type="text" value={month} onChange={(e) => setMonth(e.target.value)} placeholder="Month" className="border p-3 w-full rounded-lg" />
-          <input type="text" value={year} onChange={(e) => setYear(e.target.value)} placeholder="Year" className="border p-3 w-full rounded-lg" />
-        </div>
-        <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Message" className="border p-3 w-full rounded-lg h-32"></textarea>
-        <button onClick={handleSubmit} className="bg-blue-600 text-white px-6 py-3 rounded-lg w-full text-lg">{editingId ? "Update" : "Submit"}</button>
-      </div>
-      
+  <div className="space-y-4">
+  <input type="file" accept="image/*" onChange={handleFileChange} className="border p-3 w-full rounded-lg" />
+  <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Title" className="border p-3 w-full rounded-lg" />
+  <div className="grid grid-cols-2 gap-4">
+    <input type="text" value={month} onChange={(e) => setMonth(e.target.value)} placeholder="Month" className="border p-3 w-full rounded-lg" />
+    <input type="text" value={year} onChange={(e) => setYear(e.target.value)} placeholder="Year" className="border p-3 w-full rounded-lg" />
+  </div>
+  <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Message" className="border p-3 w-full rounded-lg h-32"></textarea>
+  <div className="flex justify-center">
+    <button onClick={handleSubmit} className="bg-lightpurple text-white px-4 py-2 rounded-lg text-sm">{editingId ? "Update" : "Submit"}</button>
+  </div>
+</div> 
       <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((post) => (
           <div key={post.id} className="bg-white shadow-lg rounded-xl overflow-hidden w-full">
@@ -120,5 +121,4 @@ const PastorDeskUpload = () => {
     </div>
   );
 };
-
 export default PastorDeskUpload;

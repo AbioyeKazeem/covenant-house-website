@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Image, Mic, CalendarDays } from "lucide-react";
+import { Image, Mic, CalendarDays, Settings } from "lucide-react";
 
 const AdminSidebar: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
   return (
@@ -8,11 +8,14 @@ const AdminSidebar: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
       ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}
     >
       <nav className="mt-40 space-y-6">
+      <Link to="/admin/admin-management" className="flex items-center gap-3 py-2 px-4 text-lg font-medium hover:bg-gray-700 rounded border-b border-gray-300">
+        <Settings size={22} /> Admin Mgt
+      </Link>
         <Link to="/admin/upload-slider" className="flex items-center gap-3 py-2 px-4 text-lg font-medium hover:bg-gray-700 rounded border-b border-gray-300">
           <Image size={22} /> Upload Slider
         </Link>
         <Link to="/admin/upload-pastordesk" className="flex items-center gap-3 py-2 px-4 text-lg font-medium hover:bg-gray-700 rounded border-b border-gray-300">
-          <Mic size={22} /> Upload Pst's Desk
+          <Mic size={22} /> Upload Pst Desk
         </Link>
         <Link to="/admin/upload-event" className="flex items-center gap-3 py-2 px-4 text-lg font-medium hover:bg-gray-700 rounded border-b border-gray-300">
           <CalendarDays size={22} /> Upload Event
