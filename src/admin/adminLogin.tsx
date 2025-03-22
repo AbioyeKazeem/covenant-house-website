@@ -77,7 +77,7 @@ const AdminLogin = () => {
       </div>
 
        {/* right Side of the Login Form */}
-      <div className="hidden md:flex w-1/2 bg-darkslateblue text-white items-center justify-center p-8">
+      <div className="hidden md:flex w-1/2 bg-darkpurple text-white items-center justify-center p-8">
         <div className="text-center animate-slideIn">
           <h2 className="text-3xl font-bold">Welcome to Admin Login!</h2>
           <p className="mt-2 text-lg">

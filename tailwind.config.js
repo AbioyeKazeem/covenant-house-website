@@ -6,6 +6,7 @@ const config = {
       colors: {
         darkslateblue: "#483D8B",
         lightpurple : "#9370DB",
+        darkpurple: "#2F2860",
       },
       fontFamily: {
         roboto: ["Roboto Mono", "monospace"],
