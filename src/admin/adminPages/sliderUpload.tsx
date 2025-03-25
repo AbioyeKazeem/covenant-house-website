@@ -87,6 +87,7 @@ const SliderUpload = () => {
         <input
           type="file"
           accept="image/*"
+          name="sliderImage" //form field named slider image which is to be matched with the backend
           onChange={handleFileChange}
           className="border p-2 w-full rounded cursor-pointer"
         />
