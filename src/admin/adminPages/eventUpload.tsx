@@ -5,7 +5,7 @@ interface Event {
   id: number;
   image: string;
   title: string;
-  date: string;
+  date: string;  // Store the date as a string (YYYY-MM-DD)
   venue: string;
 }
 
@@ -17,7 +17,7 @@ const EventUpload = () => {
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [title, setTitle] = useState("");
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState("");  // Date picked by user
   const [venue, setVenue] = useState("");
   const [editingId, setEditingId] = useState<number | null>(null);
 
@@ -75,19 +75,33 @@ const EventUpload = () => {
     setVenue(event.venue);
     setEditingId(event.id);
   };
+
   return (
     <div className="p-10 max-w-5xl mx-auto bg-white shadow-md rounded-xl w-full">
       <h2 className="text-3xl font-bold mb-6 text-center">Upload Event</h2>
       <div className="space-y-4">
-  <input type="file" accept="image/*" onChange={handleFileChange} className="border p-3 w-full rounded-lg" />
-  <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Title" className="border p-3 w-full rounded-lg" />
-  <input type="text" value={date} onChange={(e) => setDate(e.target.value)} placeholder="Date" className="border p-3 w-full rounded-lg" />
-  <input type="text" value={venue} onChange={(e) => setVenue(e.target.value)} placeholder="Venue" className="border p-3 w-full rounded-lg" />
-    <div className="flex justify-center">
-    <button onClick={handleSubmit} className="bg-lightpurple text-white px-5 py-2 rounded-lg text-sm">{editingId ? "Update" : "Submit"}</button>
-  </div>
-</div>
-<div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <input type="file" accept="image/*" onChange={handleFileChange} className="border p-3 w-full rounded-lg" />
+        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Title" className="border p-3 w-full rounded-lg" />
+        
+        {/* Date Picker */}
+        <input
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          className="border p-3 w-full rounded-lg"
+        />
+        
+        <input type="text" value={venue} onChange={(e) => setVenue(e.target.value)} placeholder="Venue" className="border p-3 w-full rounded-lg" />
+        
+        <div className="flex justify-center">
+          <button onClick={handleSubmit} className="bg-lightpurple text-white px-5 py-2 rounded-lg text-sm">
+            {editingId ? "Update" : "Submit"}
+          </button>
+        </div>
+      </div>
+
+      {/* Displaying list of events */}
+      <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {events.map((event) => (
           <div key={event.id} className="bg-white shadow-lg rounded-xl overflow-hidden w-full">
             <img src={event.image} alt={event.title} className="w-full h-60 object-cover" />
@@ -97,6 +111,7 @@ const EventUpload = () => {
               <div className="flex justify-between mt-4">
                 <button onClick={() => handleEdit(event)} className="bg-yellow-500 text-white px-4 py-2 rounded-lg">Edit</button>
                 <button onClick={() => handleDelete(event.id)} className="bg-red-500 text-white px-4 py-2 rounded-lg">Delete</button>
+                {/* Linking to event detail */}
                 <Link to={`/event/${event.id}`} className="text-blue-600 font-bold">See Details</Link>
               </div>
             </div>
@@ -106,4 +121,5 @@ const EventUpload = () => {
     </div>
   );
 };
+
 export default EventUpload;

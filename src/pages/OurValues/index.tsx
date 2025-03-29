@@ -60,28 +60,60 @@ const valuesData = [
   },
   {
     icon: "/icons/value.svg",
-    title: "We Love Unity In The Body of Christ.",
+    title: "We Love Unity In The Body of Christ",
     description:
       "We Love Unity In The Body of Christ. We agree with the scriptures that all who believe in Jesus Christ as Lord and Savior belong to one body of Christ. We shall seek to maintain the unity with all such believers. Psalm 133:1; Romans 12:5; Ephesians 4:3-6,13",
   },
+
+  {
+    icon: "/icons/plus-value.svg",
+    title: "We Value The Pursuit Of God",
+    description:
+      "We thirst for His presence and to know more of Him through private and public worship, the Word and prayer Psalm 42:1-2, 63:1-3; Matt 5:23; Luke 6:21",
+  },
+
   {
     icon: "/icons/value.svg",
+    title: "We Value The Servant Leadership",
+    description:
+      "Our leaders shall serve the members of the church as Christ did selflessly and not for profit or self-glorification.Matthew 10:42; John 13:13-15; Acts 20:18-19",
+  },
+
+  {
+    icon: "/icons/plus-value.svg",
+    title: "We Value Personal And Corporate Integrity",
+    description:
+      "and therefore shall deal and conduct our affairs truthfully and honestly such that the gospel of Jesus Christ shall not suffer any reproach because of our conduct. 2 Corinthians 13:8; Ephesians 4:15, 5:9; 6:14; James 5:12",
+  },
+
+  {
+    icon: "/icons/value.svg",
+    title: "We Value Purposeful Singleness",
+    description:
+      "where the uniqueness of being single (unmarried) should be used to bless the church. Matthew 19:12c; 1 Corinthians 7:32-34",
+  },
+
+  {
+    icon: "/icons/plus-value.svg",
     title: "We Value The Church Of God As The Body Of Christ.",
     description:
       "Our desire shall be to seek its good, growth and prosperity. Matthew 16:18; Ephesians 3:9-11; 5:25-27; 1 Timothy 3:5",
   },
+
   {
     icon: "/icons/value.svg",
     title: "We Value Simplicity",
     description:
       "and desire to do nothing in our private and public worship just for “effects” and “showing off”. Philippians 2:3; Colossians 3:17",
   },
+
   {
-    icon: "/icons/value.svg",
+    icon: "/icons/plus-value.svg",
     title: "We Value The Individual Members Of The Church",
     description:
       "and shall seek to treat one another with respect and appropriate courtesy irrespective of gender, social and physical status. We shall seek to help members to grow in the grace and to fully realize their God given potentials. John 13:35, Romans 12: 9-10, Galatians 6:10, Thessalonians 3:12, Colossians 3:12-14.",
   },
+
   {
     icon: "/icons/value.svg",
     title: "We Value Modesty In Our Lifestyle.",

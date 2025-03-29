@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaEdit, FaTrash, FaSave, FaTimes } from "react-icons/fa";
+import { FaSave, FaEdit, FaTrash, FaTimes } from "react-icons/fa";
 
 interface User {
   id: number;

@@ -1,8 +1,8 @@
 import HeaderWithBackButton from "../../components/HeaderWithBackButton";
 import MainLayout from "../../MainLayout";
 import { useState } from "react";
-import { FaAngleDown } from "react-icons/fa6";
-import { FaAngleUp } from "react-icons/fa6";
+import { FaAngleDown } from "react-icons/fa";
+import { FaAngleUp } from "react-icons/fa";
 
 const Prophecies = () => {
   const [openSection, setOpenSection] = useState(null);
