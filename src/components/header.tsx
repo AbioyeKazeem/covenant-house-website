@@ -214,7 +214,10 @@ const Header = () => {
                       <h4 className="text-lg font-semibold text-gray-800">
                         Who We Are
                       </h4>
-                      <NavLink to="/mission" className="hover:text-[#2F2860]">
+                      <NavLink
+                        to="/our-mission"
+                        className="hover:text-[#2F2860]"
+                      >
                         Our Mission
                       </NavLink>
                       <NavLink to="/values" className="hover:text-[#2F2860]">
@@ -243,7 +246,10 @@ const Header = () => {
                       <h4 className="font-semibold text-lg text-gray-800">
                         Leadership
                       </h4>
-                      <NavLink to="/overseer" className="hover:text-[#2F2860]">
+                      <NavLink
+                        to="/general-overseer"
+                        className="hover:text-[#2F2860]"
+                      >
                         General Overseer
                       </NavLink>
                       <NavLink

@@ -12,6 +12,9 @@ import OurPriorities from "./pages/OurPriorities";
 import AdminUsers from "./admin/adminPages/adminManagement";
 import MissionPage from "./pages/OurMission";
 import OurLegacy from "./pages/OurLegacy";
+import OurOrigin from "./pages/OurOrigin";
+import PastorProfile from "./pages/GeneralOverseer";
+import Prophecies from "./pages/Prophecies";
 
 function AppRouter() {
   return (
@@ -30,6 +33,9 @@ function AppRouter() {
       <Route path="/our-priorities" element={<OurPriorities />} />
       <Route path="/our-mission" element={<MissionPage />} />
       <Route path="/our-legacy" element={<OurLegacy />} />
+      <Route path="/our-origin" element={<OurOrigin />} />
+      <Route path="/general-overseer" element={<PastorProfile />} />
+      <Route path="/prophecies" element={<Prophecies />} />
     </Routes>
   );
 }

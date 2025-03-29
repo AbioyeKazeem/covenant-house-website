@@ -10,10 +10,10 @@ const PrayerRequest = () => {
         initial={{ x: "-100%", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="fixed top-[15%]  md:top-1  left-0  shadow-lg  rounded-r-lg  md:w-[592.7px] text-center z-50"
+        className="fixed top-[15%]  md:top-[10%]  left-0  shadow-lg  rounded-r-lg  md:w-[492.7px] text-center z-50"
       >
         <div
-          className="relative w-full h-full py-[117px] px-[53px] bg-cover bg-center"
+          className="relative w-full h-full py-[70px] px-[43px] bg-cover bg-center"
           style={{
             backgroundImage: `url('/prayer-request.jpeg')`,
           }}
@@ -25,7 +25,7 @@ const PrayerRequest = () => {
           >
             ✖
           </button>
-          <div className="relative px-[57px] pt-[36px] pb-[69px] font-medium font-poppins text-white  rounded-lg bg-white/15 backdrop-blur-sm text-center shadow-lg">
+          <div className="relative px-[20px ] md:px-[47px] pt-[36px] pb-[69px] font-medium font-poppins text-white  rounded-lg bg-white/15 backdrop-blur-sm text-center shadow-lg">
             <h3 className=" text-2xl italic font-bold ">
               Need Prayer <br /> or <br />{" "}
               <span className="font-bold">Spiritual Support?</span>
