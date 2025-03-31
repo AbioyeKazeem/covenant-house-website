@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const PrayerRequest: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -37,7 +38,7 @@ const PrayerRequest: React.FC = () => {
               and stand with you in faith.
             </p>
             <button className="mt-4 px-4 py-2 border border-white text-white text-sm rounded-md transition">
-              Request Prayer
+              <Link to="/prayer-request">Request Prayer</Link>
             </button>
           </div>
         </div>

@@ -30,7 +30,7 @@ const HeaderWithBackButton: React.FC<HeaderProps> = ({
       {/* Title & Description */}
       <div className="text-center flex-1 items-center">
         <h2 className="text-2xl font-bold text-[#2F2860] mb-2">{title}</h2>
-        <p className="text-[#000000] font-semibold text-center max-w-[773px] mx-auto font-poppins">
+        <p className="text-[#000000] font-normal text-center max-w-[773px] mx-auto font-poppins ">
           {description}
         </p>
       </div>

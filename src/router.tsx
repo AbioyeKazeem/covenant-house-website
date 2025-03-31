@@ -15,6 +15,7 @@ import OurLegacy from "./pages/OurLegacy";
 import OurOrigin from "./pages/OurOrigin";
 import PastorProfile from "./pages/GeneralOverseer";
 import Prophecies from "./pages/Prophecies";
+import PrayerForm from "./pages/PayerRequest";
 
 function AppRouter() {
   return (
@@ -28,7 +29,7 @@ function AppRouter() {
         <Route path="upload-event" element={<EventUpload />} />
       </Route>
       <Route path="/" element={<HomePage />} />
-      <Route path="/values" element={<ValuesPage />} />
+      <Route path="/our-values" element={<ValuesPage />} />
       <Route path="/our-beliefs" element={<OurBelief />} />
       <Route path="/our-priorities" element={<OurPriorities />} />
       <Route path="/our-mission" element={<MissionPage />} />
@@ -36,6 +37,7 @@ function AppRouter() {
       <Route path="/our-origin" element={<OurOrigin />} />
       <Route path="/general-overseer" element={<PastorProfile />} />
       <Route path="/prophecies" element={<Prophecies />} />
+      <Route path="/prayer-request" element={<PrayerForm />} />
     </Routes>
   );
 }
