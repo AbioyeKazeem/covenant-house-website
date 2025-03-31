@@ -8,7 +8,7 @@ type MainLayoutProps = {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <div className="max-w-[1380px] mx-auto">
+    <div className="">
       <Header />
       {children}
       <Footer />

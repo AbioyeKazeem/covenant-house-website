@@ -4,8 +4,8 @@ import { IoLocationOutline } from "react-icons/io5";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#2F2860] text-white py-10">
-      <div className="flex flex-col justify-between lg:flex-row gap-8">
+    <footer className="bg-[#2F2860]  text-white py-10">
+      <div className="flex flex-col justify-between lg:flex-row gap-8 max-w-[1380px] mx-auto">
         {/* Key Ministries & Quick Links Section */}
         <div className="max-w-[665px] w-full px-2 md:px-0">
           <div className="bg-white text-[#2F2860] md:pl-[98px] py-[8px] flex justify-between">
