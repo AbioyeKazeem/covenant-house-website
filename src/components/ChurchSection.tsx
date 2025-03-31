@@ -5,7 +5,7 @@ const cards = [
   {
     image: "/values.png",
     title: "Our Values",
-    link: "/values",
+    link: "/our-values",
   },
   {
     image: "/beliefs.png",
