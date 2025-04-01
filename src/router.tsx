@@ -16,6 +16,8 @@ import OurOrigin from "./pages/OurOrigin";
 import PastorProfile from "./pages/GeneralOverseer";
 import Prophecies from "./pages/Prophecies";
 import PrayerForm from "./pages/PayerRequest";
+import Resources from "./pages/Resources";
+import KeyResources from "./pages/KeyRousources";
 
 function AppRouter() {
   return (
@@ -38,6 +40,8 @@ function AppRouter() {
       <Route path="/general-overseer" element={<PastorProfile />} />
       <Route path="/prophecies" element={<Prophecies />} />
       <Route path="/prayer-request" element={<PrayerForm />} />
+      <Route path="/resources" element={<Resources />} />
+      <Route path="/key-resources" element={<KeyResources />} />
     </Routes>
   );
 }

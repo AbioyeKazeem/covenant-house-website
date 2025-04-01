@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(
+    null
+  );
+  const [expandedMobileItem, setExpandedMobileItem] = useState<string | null>(
     null
   );
 
@@ -32,6 +35,34 @@ const Header = () => {
     }, 200);
     setDropdownTimeout(timeout);
   };
+
+  const toggleMobileDropdown = (itemName: string) => {
+    if (expandedMobileItem === itemName) {
+      setExpandedMobileItem(null);
+    } else {
+      setExpandedMobileItem(itemName);
+    }
+  };
+
+  const churchDropdownItems = [
+    {
+      title: "Who We Are",
+      links: [
+        { name: "Our Mission", path: "/our-mission" },
+        { name: "Our Values", path: "/our-values" },
+        { name: "Our Priorities", path: "/our-priorities" },
+        { name: "Our Origin", path: "/our-origin" },
+        { name: "Our Legacy", path: "/our-legacy" },
+      ],
+    },
+    {
+      title: "Leadership",
+      links: [
+        { name: "General Overseer", path: "/general-overseer" },
+        { name: "Church Leadership", path: "/continental" },
+      ],
+    },
+  ];
 
   return (
     <header className="w-full bg-[#FDFBFE]">
@@ -108,58 +139,22 @@ const Header = () => {
                   onMouseLeave={handleMouseLeave}
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                    <div className="flex flex-col space-y-2">
-                      <h4 className="text-lg font-semibold text-gray-800">
-                        Who We Are
-                      </h4>
-                      <NavLink
-                        to="/our-mission"
-                        className="hover:text-[#2F2860]"
-                      >
-                        Our Mission
-                      </NavLink>
-                      <NavLink
-                        to="/our-values"
-                        className="hover:text-[#2F2860]"
-                      >
-                        Our Values
-                      </NavLink>
-                      <NavLink
-                        to="/our-priorities"
-                        className="hover:text-[#2F2860]"
-                      >
-                        Our Priorities
-                      </NavLink>
-                      <NavLink
-                        to="/our-origin"
-                        className="hover:text-[#2F2860]"
-                      >
-                        Our Origin
-                      </NavLink>
-                      <NavLink
-                        to="/our-legacy"
-                        className="hover:text-[#2F2860]"
-                      >
-                        Our Legacy
-                      </NavLink>
-                    </div>
-                    <div className="flex flex-col space-y-2">
-                      <h4 className="font-semibold text-lg text-gray-800">
-                        Leadership
-                      </h4>
-                      <NavLink
-                        to="/general-overseer"
-                        className="hover:text-[#2F2860]"
-                      >
-                        General Overseer
-                      </NavLink>
-                      <NavLink
-                        to="/continental"
-                        className="hover:text-[#2F2860]"
-                      >
-                        Church Leadership
-                      </NavLink>
-                    </div>
+                    {churchDropdownItems.map((section, index) => (
+                      <div key={index} className="flex flex-col space-y-2">
+                        <h4 className="text-lg font-semibold text-gray-800">
+                          {section.title}
+                        </h4>
+                        {section.links.map((item) => (
+                          <NavLink
+                            key={item.name}
+                            to={item.path}
+                            className="hover:text-[#2F2860]"
+                          >
+                            {item.name}
+                          </NavLink>
+                        ))}
+                      </div>
+                    ))}
                   </div>
                 </div>
               )}
@@ -180,20 +175,68 @@ const Header = () => {
         <div className="md:hidden bg-[#2F2860] text-white px-4 py-4 flex flex-col space-y-4">
           {[
             { name: "HOME", path: "/" },
-            { name: "THE CHURCH", path: "/church" },
+            {
+              name: "THE CHURCH",
+              path: "/church",
+              hasDropdown: true,
+              dropdownItems: churchDropdownItems,
+            },
             { name: "MINISTRIES", path: "/ministries" },
             { name: "RESOURCES", path: "/resources" },
             { name: "EVENTS", path: "/events" },
             { name: "CONTACT", path: "/contact" },
           ].map((link) => (
-            <NavLink
-              key={link.name}
-              to={link.path}
-              className="text-white hover:underline"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {link.name}
-            </NavLink>
+            <div key={link.name} className="flex flex-col">
+              <div className="flex items-center justify-between">
+                <NavLink
+                  to={link.path}
+                  className="text-white hover:underline"
+                  onClick={() => {
+                    if (!link.hasDropdown) {
+                      setIsMobileMenuOpen(false);
+                    }
+                  }}
+                >
+                  {link.name}
+                </NavLink>
+                {link.hasDropdown && (
+                  <button
+                    onClick={() => toggleMobileDropdown(link.name)}
+                    className="text-white p-2"
+                  >
+                    {expandedMobileItem === link.name ? (
+                      <FiChevronUp />
+                    ) : (
+                      <FiChevronDown />
+                    )}
+                  </button>
+                )}
+              </div>
+
+              {link.hasDropdown && expandedMobileItem === link.name && (
+                <div className="ml-4 mt-2 flex flex-col space-y-3">
+                  {link.dropdownItems.map((section, index) => (
+                    <div key={index}>
+                      <h4 className="font-semibold text-white/80">
+                        {section.title}
+                      </h4>
+                      <div className="ml-2 mt-1 flex flex-col space-y-2">
+                        {section.links.map((item) => (
+                          <NavLink
+                            key={item.name}
+                            to={item.path}
+                            className="text-white/70 hover:text-white"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {item.name}
+                          </NavLink>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
           <button className="bg-gray-200 text-gray-900 px-4 py-2 rounded-md text-sm">
             DONATE
