@@ -18,6 +18,11 @@ import Prophecies from "./pages/Prophecies";
 import PrayerForm from "./pages/PayerRequest";
 import Resources from "./pages/Resources";
 import KeyResources from "./pages/KeyRousources";
+import OpenHeaven from "./pages/OpenHeaven";
+import SundaySchool from "./pages/SundaySchool";
+import HomeFellowship from "./pages/HomeFellowship";
+import Baptismal from "./pages/Baptismal";
+import PrayerPoint from "./pages/PrayerPoint";
 
 function AppRouter() {
   return (
@@ -42,6 +47,11 @@ function AppRouter() {
       <Route path="/prayer-request" element={<PrayerForm />} />
       <Route path="/resources" element={<Resources />} />
       <Route path="/key-resources" element={<KeyResources />} />
+      <Route path="/open-heaven" element={<OpenHeaven />} />
+      <Route path="/prayer-point" element={<PrayerPoint />} />
+      <Route path="/sunday-school" element={<SundaySchool />} />
+      <Route path="/home-fellowship" element={<HomeFellowship />} />
+      <Route path="/baptismal" element={<Baptismal />} />
     </Routes>
   );
 }

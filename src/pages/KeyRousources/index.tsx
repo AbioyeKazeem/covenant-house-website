@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import HeaderWithBackButton from "../../components/HeaderWithBackButton";
 import MainLayout from "../../MainLayout";
 import React from "react";
@@ -5,32 +6,32 @@ import React from "react";
 const resources = [
   {
     title: "Open Heavens",
-    link: "#",
+    link: "/open-heaven",
     image: "/resources1.png",
   },
   {
     title: "Prayer Points",
-    link: "#",
+    link: "/prayer-point",
     image: "/resources2.png",
   },
   {
     title: "Sunday School",
-    link: "#",
+    link: "/sunday-school",
     image: "/resources3.png",
   },
   {
     title: "Home Fellowship",
-    link: "#",
+    link: "/home-fellowship",
     image: "/resources4.png",
   },
   {
     title: "Baptismal Manual",
-    link: "#",
+    link: "/baptismal",
     image: "/resources5.png",
   },
   {
     title: "Prayer Requests",
-    link: "/prayer-requests",
+    link: "/prayer-request",
     image: "/resources6.png",
   },
   {
@@ -49,7 +50,8 @@ const KeyResources = () => {
           {/* First row of resources */}
           <div className="max-w-[960px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {resources.slice(0, 4).map((resource, index) => (
-              <div
+              <Link
+                to={resource.link}
                 key={index}
                 className="bg-white cursor-pointer shadow-md rounded-lg p-6 text-center hover:shadow-lg transition duration-300 flex flex-col items-center"
               >
@@ -61,14 +63,15 @@ const KeyResources = () => {
                 <h3 className="text-lg text-[#2F2860] font-semibold">
                   {resource.title}
                 </h3>
-              </div>
+              </Link>
             ))}
           </div>
 
           {/* Second row with centered last three cards */}
           <div className="max-w-[960px] mx-auto flex flex-wrap justify-center gap-6 mt-6">
             {resources.slice(4).map((resource, index) => (
-              <div
+              <Link
+                to={resource.link}
                 key={index}
                 className="bg-white cursor-pointer shadow-md rounded-lg p-6 text-center hover:shadow-lg transition duration-300 flex flex-col items-center"
               >
@@ -80,7 +83,7 @@ const KeyResources = () => {
                 <h3 className="text-lg text-[#2F2860] font-semibold">
                   {resource.title}
                 </h3>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
