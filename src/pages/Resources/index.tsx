@@ -7,6 +7,7 @@ import {
   FaClipboard,
   FaYoutube,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const resources = [
   {
@@ -24,7 +25,7 @@ const resources = [
   {
     title: "Pastor’s Desk",
     description: "Monthly motivations from the Chairman",
-    link: "#",
+    link: "/pastor-desk",
     icon: <FaUserTie className="text-4xl text-[#2F2860]" />,
   },
   {
@@ -61,12 +62,12 @@ const Resources = () => {
               <p className="text-[#2F2860] text-sm mb-[10px] md:px-[44px] ">
                 {resource.description}
               </p>
-              <a
-                href={resource.link}
+              <Link
+                to={resource.link}
                 className="text-[#2F2860] font-medium underline text-lg"
               >
                 View
-              </a>
+              </Link>
             </div>
           ))}
         </div>

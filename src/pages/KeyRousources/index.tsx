@@ -36,7 +36,7 @@ const resources = [
   },
   {
     title: "Operation Andrew",
-    link: "#",
+    link: "/operation-andrew",
     image: "/resources7.png",
   },
 ];

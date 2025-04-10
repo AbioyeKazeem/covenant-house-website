@@ -23,6 +23,9 @@ import SundaySchool from "./pages/SundaySchool";
 import HomeFellowship from "./pages/HomeFellowship";
 import Baptismal from "./pages/Baptismal";
 import PrayerPoint from "./pages/PrayerPoint";
+import OpreationAdrew from "./pages/OperationAndrew";
+import PastorDesk from "./pages/PastorDesk";
+import NewsletterDetail from "./pages/NewsletterDetail";
 
 function AppRouter() {
   return (
@@ -52,6 +55,9 @@ function AppRouter() {
       <Route path="/sunday-school" element={<SundaySchool />} />
       <Route path="/home-fellowship" element={<HomeFellowship />} />
       <Route path="/baptismal" element={<Baptismal />} />
+      <Route path="/operation-andrew" element={<OpreationAdrew />} />
+      <Route path="/pastor-desk" element={<PastorDesk />} />
+      <Route path="/pastor-desk/:id" element={<NewsletterDetail />} />
     </Routes>
   );
 }
