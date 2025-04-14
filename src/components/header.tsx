@@ -238,9 +238,12 @@ const Header = () => {
               )}
             </div>
           ))}
-          <button className="bg-gray-200 text-gray-900 px-4 py-2 rounded-md text-sm">
+          <NavLink
+            to="/donate"
+            className="bg-gray-200 text-gray-900 px-4 py-2 rounded-md text-sm"
+          >
             DONATE
-          </button>
+          </NavLink>
         </div>
       )}
     </header>

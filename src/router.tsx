@@ -26,6 +26,9 @@ import PrayerPoint from "./pages/PrayerPoint";
 import OpreationAdrew from "./pages/OperationAndrew";
 import PastorDesk from "./pages/PastorDesk";
 import NewsletterDetail from "./pages/NewsletterDetail";
+import Donate from "./pages/Donation";
+import GiveByText from "./pages/GiveByText";
+import OnlineDonation from "./pages/OnlineDonation";
 
 function AppRouter() {
   return (
@@ -58,6 +61,9 @@ function AppRouter() {
       <Route path="/operation-andrew" element={<OpreationAdrew />} />
       <Route path="/pastor-desk" element={<PastorDesk />} />
       <Route path="/pastor-desk/:id" element={<NewsletterDetail />} />
+      <Route path="/donate" element={<Donate />} />
+      <Route path="/give-by-text" element={<GiveByText />} />
+      <Route path="/online-donation" element={<OnlineDonation />} />
     </Routes>
   );
 }
