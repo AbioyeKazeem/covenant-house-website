@@ -29,6 +29,10 @@ import NewsletterDetail from "./pages/NewsletterDetail";
 import Donate from "./pages/Donation";
 import GiveByText from "./pages/GiveByText";
 import OnlineDonation from "./pages/OnlineDonation";
+import Event from "./pages/Event";
+import EventsCalendar from "./pages/Event";
+import EventDetails from "./pages/EventDetails";
+import AllEvents from "./pages/AllEvents";
 
 function AppRouter() {
   return (
@@ -64,6 +68,9 @@ function AppRouter() {
       <Route path="/donate" element={<Donate />} />
       <Route path="/give-by-text" element={<GiveByText />} />
       <Route path="/online-donation" element={<OnlineDonation />} />
+      <Route path="/events" element={<EventsCalendar />} />
+      <Route path="/events/:id" element={<EventDetails />} />
+      <Route path="/events/all" element={<AllEvents />} />
     </Routes>
   );
 }

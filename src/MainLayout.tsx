@@ -8,7 +8,7 @@ type MainLayoutProps = {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <div className="">
+    <div className="bg-[#FDFBFE]">
       <Header />
       {children}
       <Footer />

@@ -164,9 +164,12 @@ const Header = () => {
 
         {/* Donate Button (Right Aligned) */}
         <div className="hidden md:block pr-[93px]">
-          <button className="bg-gray-200 text-gray-900 px-4 py-1 rounded-md text-sm">
+          <NavLink
+            to="/donate"
+            className="bg-gray-200 text-gray-900 px-4 py-1 rounded-md text-sm"
+          >
             DONATE
-          </button>
+          </NavLink>
         </div>
       </div>
 
