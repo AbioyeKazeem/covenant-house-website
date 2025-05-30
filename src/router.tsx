@@ -29,7 +29,7 @@ import NewsletterDetail from "./pages/NewsletterDetail";
 import Donate from "./pages/Donation";
 import GiveByText from "./pages/GiveByText";
 import OnlineDonation from "./pages/OnlineDonation";
-import Event from "./pages/Event";
+//import Event from "./pages/Event";
 import EventsCalendar from "./pages/Event";
 import EventDetails from "./pages/EventDetails";
 import AllEvents from "./pages/AllEvents";
