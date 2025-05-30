@@ -33,6 +33,8 @@ import OnlineDonation from "./pages/OnlineDonation";
 import EventsCalendar from "./pages/Event";
 import EventDetails from "./pages/EventDetails";
 import AllEvents from "./pages/AllEvents";
+import ContactPage from "./pages/Contact";
+import MinistriesPage from "./pages/Ministries";
 
 function AppRouter() {
   return (
@@ -71,6 +73,8 @@ function AppRouter() {
       <Route path="/events" element={<EventsCalendar />} />
       <Route path="/events/:id" element={<EventDetails />} />
       <Route path="/events/all" element={<AllEvents />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/ministries" element={<MinistriesPage />} />
     </Routes>
   );
 }
