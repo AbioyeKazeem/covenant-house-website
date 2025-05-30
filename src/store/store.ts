@@ -4,6 +4,7 @@ import authReducer from "../store/authSlice";
 import sliderReducer from "../store/sliderSlice";
 import pastorDeskReducer from "../store/pastorDeskSlice";
 import eventReducer from "../store/eventSlice";
+import prayerRequestReducer from "../store/prayerSlice";
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
     slider: sliderReducer,
     pastorDesk: pastorDeskReducer,
     events: eventReducer,
+    prayerRequest: prayerRequestReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
