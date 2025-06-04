@@ -35,6 +35,8 @@ import EventDetails from "./pages/EventDetails";
 import AllEvents from "./pages/AllEvents";
 import ContactPage from "./pages/Contact";
 import MinistriesPage from "./pages/Ministries";
+import ViewContacts from "./admin/adminPages/viewContact";
+import ViewPrayerRequests from "./admin/adminPages/viewPrayers";
 
 function AppRouter() {
   return (
@@ -46,6 +48,8 @@ function AppRouter() {
         <Route path="upload-slider" element={<SliderUpload />} />
         <Route path="upload-pastordesk" element={<PastorDeskUpload />} />
         <Route path="upload-event" element={<EventUpload />} />
+        <Route path="view-contacts" element={<ViewContacts />} /> 
+        <Route path="view-prayers" element={<ViewPrayerRequests />} />
       </Route>
       <Route path="/" element={<HomePage />} />
       <Route path="/our-values" element={<ValuesPage />} />
@@ -75,7 +79,7 @@ function AppRouter() {
       <Route path="/events/all" element={<AllEvents />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/ministries" element={<MinistriesPage />} />
-    </Routes>
+      </Routes>
   );
 }
 

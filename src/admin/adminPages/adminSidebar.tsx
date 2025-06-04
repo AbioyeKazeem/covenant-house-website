@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Image, Mic, CalendarDays, Settings } from "lucide-react";
+import { Image, Mic, CalendarDays, Settings, Heart, User } from "lucide-react";
 
 const AdminSidebar: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
   return (
@@ -19,6 +19,12 @@ const AdminSidebar: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
         </Link>
         <Link to="/admin/upload-event" className="flex items-center gap-3 py-2 px-4 text-lg font-medium hover:bg-gray-700 rounded border-b border-gray-300">
           <CalendarDays size={22} /> Upload Event
+        </Link>
+        <Link to="/admin/view-prayers" className="flex items-center gap-3 py-2 px-4 text-lg font-medium hover:bg-gray-700 rounded border-b border-gray-300">
+          <Heart size={22} />Prayers
+        </Link>
+        <Link to="/admin/view-contacts" className="flex items-center gap-3 py-2 px-4 text-lg font-medium hover:bg-gray-700 rounded border-b border-gray-300">
+          <User size={22} />Contacts
         </Link>
       </nav>
     </aside>

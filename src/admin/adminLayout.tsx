@@ -12,8 +12,6 @@ const AdminLayout = () => {
     <div className="flex h-screen flex-col md:flex-row">
       
       <AdminSidebar isOpen={sidebarOpen} />
-
-      {/* Main Content */}
       <div className="flex-1 flex flex-col">
         
         <AdminHeader toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
@@ -33,7 +31,6 @@ const AdminLayout = () => {
             </div>
           )}
 
-          {/* Dynamic Page Content (SliderUpload, UploadSermon, UploadEvent, etc.) */}
           <Outlet />
         </main>
 
