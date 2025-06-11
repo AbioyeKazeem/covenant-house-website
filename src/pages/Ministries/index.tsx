@@ -14,7 +14,7 @@ const MinistriesPage = () => {
         </div>
         <div className="max-w-[898px] mx-auto mt-10 grid grid-cols-3 grid-rows-3 gap-6 justify-items-center items-center">
           <div className="row-start-1 col-start-2">
-            <Link to="/ministries/men">
+            <Link to="/men-ministry">
               <div className="bg-white shadow-md rounded-lg overflow-hidden text-center w-[180px] cursor-pointer hover:shadow-lg transition">
                 <img src="/men.jpg" alt="Men Ministry" className="w-full h-[160px] object-cover" />
                 <p className="py-2 border-t font-medium text-sm">Men Ministry</p>

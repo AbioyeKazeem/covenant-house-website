@@ -35,6 +35,7 @@ import EventDetails from "./pages/EventDetails";
 import AllEvents from "./pages/AllEvents";
 import ContactPage from "./pages/Contact";
 import MinistriesPage from "./pages/Ministries";
+import MenMinistry from "./pages/Ministries/Men";
 import ViewContacts from "./admin/adminPages/viewContact";
 import ViewPrayerRequests from "./admin/adminPages/viewPrayers";
 
@@ -79,6 +80,7 @@ function AppRouter() {
       <Route path="/events/all" element={<AllEvents />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/ministries" element={<MinistriesPage />} />
+      <Route path="/men-ministry" element={<MenMinistry />} />
       </Routes>
   );
 }
