@@ -36,6 +36,9 @@ import AllEvents from "./pages/AllEvents";
 import ContactPage from "./pages/Contact";
 import MinistriesPage from "./pages/Ministries";
 import MenMinistry from "./pages/Ministries/Men";
+import WomenMinistry from "./pages/Ministries/Women";
+import YouthMinistry from "./pages/Ministries/Youth";
+import ChildrenMinistry from "./pages/Ministries/Children";
 import ViewContacts from "./admin/adminPages/viewContact";
 import ViewPrayerRequests from "./admin/adminPages/viewPrayers";
 
@@ -81,6 +84,9 @@ function AppRouter() {
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/ministries" element={<MinistriesPage />} />
       <Route path="/men-ministry" element={<MenMinistry />} />
+      <Route path="/women-ministry" element={<WomenMinistry />} />
+      <Route path="/youth-ministry" element={<YouthMinistry />} />
+      <Route path="/children-ministry" element={<ChildrenMinistry />} />
       </Routes>
   );
 }

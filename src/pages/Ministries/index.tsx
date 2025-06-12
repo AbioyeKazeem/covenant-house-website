@@ -22,7 +22,7 @@ const MinistriesPage = () => {
             </Link>
           </div>
           <div className="row-start-2 col-start-1">
-            <Link to="/ministries/women">
+            <Link to="/women-ministry">
               <div className="bg-white shadow-md rounded-lg overflow-hidden text-center w-[180px] cursor-pointer hover:shadow-lg transition">
                 <img src="/women.jpg" alt="Women In Ministry" className="w-full h-[160px] object-cover" />
                 <p className="py-2 border-t font-medium text-sm">Women In Ministry</p>
@@ -30,7 +30,7 @@ const MinistriesPage = () => {
             </Link>
           </div>
           <div className="row-start-2 col-start-3">
-            <Link to="/ministries/youth">
+            <Link to="/youth-ministry">
               <div className="bg-white shadow-md rounded-lg overflow-hidden text-center w-[180px] cursor-pointer hover:shadow-lg transition">
                 <img src="/youth.jpg" alt="Youth Ministry" className="w-full h-[160px] object-cover" />
                 <p className="py-2 border-t font-medium text-sm">Youth Ministry</p>
@@ -38,7 +38,7 @@ const MinistriesPage = () => {
             </Link>
           </div>
           <div className="row-start-3 col-start-2">
-            <Link to="/ministries/children">
+            <Link to="/children-ministry">
               <div className="bg-white shadow-md rounded-lg overflow-hidden text-center w-[180px] cursor-pointer hover:shadow-lg transition">
                 <img src="/children.jpg" alt="Children Ministry" className="w-full h-[160px] object-cover" />
                 <p className="py-2 border-t font-medium text-sm">Children Ministry</p>

@@ -7,8 +7,6 @@ const MenMinistry = () => {
       <div className="pt-[43px] pb-[80px] px-4">
         {/* Back Button and Title */}
         <HeaderWithBackButton title="MEN MINISTRY" />
-
-        {/* Centered Quote and Subtext */}
         <div className="text-center mt-6">
           <p className="text-[20px] font-poppins font-medium text-black italic mb-2">
             "Men of Faith, Strength, and Service."
@@ -130,9 +128,13 @@ const MenMinistry = () => {
 </div>
 
 <div className="bg-[#D7C9F2] pt-12 pb-4 px-4 mt-20">
-  <h2 className="text-center text-lg font-medium text-[#1D1D1D] mb-10">
+  <div className="text-center mb-10">
+  <h2 className="text-lg font-medium text-[#1D1D1D]">
     Our Leadership
   </h2>
+  <img src="/Line.jpg" alt="Arrow underline" className="mx-auto mt-1 w-20" />
+</div>
+
   <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
     <div className="text-center">
       <img
@@ -190,6 +192,10 @@ const MenMinistry = () => {
     </div>
   </div>
 </div>
+
+
+
+
 </div>
     </MainLayout>
   );
