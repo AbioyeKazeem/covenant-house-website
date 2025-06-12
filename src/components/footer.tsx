@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+    const navigate = useNavigate();
   return (
     <footer className="bg-[#2F2860] text-white py-8 px-6">
       <div className="max-w-6xl mx-auto">
@@ -16,7 +18,7 @@ const Footer = () => {
               <ul className="space-y-4">
                 <li>
                   <Link
-                    to="#"
+                    to="men-ministry"
                     className="text-gray-300 hover:text-white transition-colors border-b border-[#F2F0FAD9] pb-1 inline-block"
                   >
                     Men Ministry
@@ -24,7 +26,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    to="#"
+                    to="women-ministry"
                     className="text-gray-300 hover:text-white transition-colors border-b border-[#F2F0FAD9] pb-1 inline-block"
                   >
                     Women Ministry
@@ -32,7 +34,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    to="#"
+                    to="youth-ministry"
                     className="text-gray-300 hover:text-white transition-colors border-b border-[#F2F0FAD9] pb-1 inline-block"
                   >
                     Youth Ministry
@@ -40,7 +42,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    to="#"
+                    to="children-ministry"
                     className="text-gray-300 hover:text-white transition-colors border-b border-[#F2F0FAD9] pb-1 inline-block"
                   >
                     Children Ministry
@@ -48,7 +50,8 @@ const Footer = () => {
                 </li>
               </ul>
               <div className="mt-6">
-                <button className="bg-[#ABB8E2ED] text-white px-4 py-2 rounded text-sm transition-colors">
+                <button onClick={() => navigate("/ministries")}
+                className="bg-[#ABB8E2ED] text-white px-4 py-2 rounded text-sm transition-colors">
                   View All Ministries
                 </button>
               </div>
@@ -102,7 +105,8 @@ const Footer = () => {
                 </li>
               </ul>
               <div className="mt-6">
-                <button className="bg-[#ABB8E2ED]  text-white px-4 py-2 rounded text-sm transition-colors">
+                <button onClick={() => navigate("/resources")}
+                className="bg-[#ABB8E2ED]  text-white px-4 py-2 rounded text-sm transition-colors">
                   View All Resources
                 </button>
               </div>

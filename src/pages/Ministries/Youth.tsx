@@ -5,9 +5,7 @@ const YouthMinistry = () => {
   return (
     <MainLayout>
       <div className="pt-[43px] pb-[80px] px-4">
-        {/* Back Button and Title */}
         <HeaderWithBackButton title="YOUTH MINISTRY" />
-
 <div className="bg-white px-4 py-10">
   <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-start gap-2">
         <div className="lg:w-1/2 w-full mt-4 pr-2">
@@ -34,8 +32,6 @@ const YouthMinistry = () => {
   </div>
 </div>
 
-
-
 <div className="bg-white text-center">
   <div className="bg-[#1E1A45] py-4">
     <h2 className="text-white text-lg md:text-xl font-mono font-semibold">
@@ -61,13 +57,9 @@ const YouthMinistry = () => {
   </div>
 </div>
 
-
-
 <div className="bg-white px-4 py-10">
   <div className="max-w-5xl mx-auto space-y-12">
-    
-    {/* Our Vision - Left side */}
-    <div className="w-full md:w-[60%]">
+        <div className="w-full md:w-[60%]">
       <div className="flex items-center mb-2">
         <h3 className="text-[15px] font-bold text-gray-900">Our Vision</h3>
         <div className="w-2 h-2 bg-gray-900 rounded-full mx-2"></div>
@@ -78,7 +70,6 @@ const YouthMinistry = () => {
       </p>
     </div>
 
-    {/* Our Mission - Right side, text still aligned left */}
     <div className="w-full md:w-[60%] ml-auto">
       <div className="flex items-center mb-2">
         <h3 className="text-[15px] font-bold text-gray-900">Our Mission</h3>
@@ -92,8 +83,6 @@ const YouthMinistry = () => {
 
   </div>
 </div>
-
-
 
 <div className="bg-white py-20 px-4 text-center ">
   <h2 className="text-[14px] font-medium text-indigo-900 tracking-wide mb-8">
@@ -126,13 +115,11 @@ const YouthMinistry = () => {
       <p className="text-sm font-medium text-gray-800">Service & Outreach</p>
     </div>
   </div>
-  {/* Dot indicators */}
   <div className="flex justify-center items-center space-x-2 mb-6">
     <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
     <div className="w-2.5 h-2.5 bg-indigo-800 rounded-full"></div>
     <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
   </div>
-  {/* CTA */}
   <div className="text-sm text-gray-700">
     <p className="italic font-medium mb-1">Want to be a part of us?</p>
     <a href="/events" className="text-indigo-800 underline font-medium">

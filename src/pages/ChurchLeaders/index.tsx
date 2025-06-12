@@ -5,8 +5,7 @@ const ChurchLeaders = () => {
   return (
     <MainLayout>
       <div className="pt-[43px] pb-[80px] px-4">
-        {/* Back Button and Title */}
-        <HeaderWithBackButton title="CHURCH LEADERS" />
+    <HeaderWithBackButton title="CHURCH LEADERS" />
 
 <div className="bg-[#D7C9F2] pt-12 pb-4 px-4 mt-5">
   <div className="text-center mb-10">

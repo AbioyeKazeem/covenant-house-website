@@ -1,14 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import HeaderWithBackButton from "../../components/HeaderWithBackButton";
 import MainLayout from "../../MainLayout";
 
 const WomenMinistry = () => {
+  const navigate = useNavigate();
   return (
     <MainLayout>
       <div className="pt-[43px] pb-[80px] px-4">
-        {/* Back Button and Title */}
         <HeaderWithBackButton title="WOMEN MINISTRY" />
-
-
 <div className="relative w-full h-[450px] mt-10">
   <img
     src="/womenmain.jpg"
@@ -32,7 +31,6 @@ const WomenMinistry = () => {
   </div>
 </div>
 
-
 <div className="bg-[#2C1A5E] text-white text-center py-12 px-4">
   <h2 className="text-[17px] font-semibold tracking-wide mb-3">A Sisterhood of Faith</h2>
   <p className="max-w-2xl mx-auto text-[14px] leading-relaxed mb-4">
@@ -44,8 +42,6 @@ const WomenMinistry = () => {
     <span className="not-italic font-medium block mt-1">– Proverbs 31:25</span>
   </p>
 </div>
-
-
 
 <div className="mt-8 px-4 max-w-5xl mx-auto text-center">
   <h2 className="text-[20px] font-semibold text-[#1D1D1D] mb-4">
@@ -84,7 +80,6 @@ const WomenMinistry = () => {
   </div>
 </div>
 
-
 <div className="mt-8 px-4 text-center max-w-3xl mx-auto">
   <h2 className="text-lg font-semibold text-[#1D1D1D] mb-3">
     Ministry’s Focus Areas – <span className="text-[#6B21A8]">The Pillars of Womanhood</span>
@@ -98,9 +93,6 @@ const WomenMinistry = () => {
   <p className="text-sm font-medium text-gray-700 mt-1">— Matthew 5:16</p>
 </div>
 
-
-
-{/* Women Programs */}
 <div className="mt-10 px-4 max-w-6xl mx-auto flex flex-col items-center">
   <div className="grid grid-cols-2 gap-8">
     <div className="text-center">
@@ -134,7 +126,6 @@ const WomenMinistry = () => {
       <p className="mt-2 text-sm font-semibold text-[#1D1D1D]">Mentorship & Leadership</p>
     <p className="mt-6"> Guiding women in their faith journey through small groups and bible studies</p>
     </div>
-
     <div className="text-center">
       <img
         src="/womenmentor1.jpg"
@@ -146,15 +137,12 @@ const WomenMinistry = () => {
   </div>
 </div>
 
-
-
 <div className="mt-8 flex justify-center">
-  <button className="border border-[#1D4ED8] text-[#1D4ED8] px-6 py-2 rounded-md text-sm font-medium hover:bg-[#E5F1FF] transition">
+  <button onClick={() => navigate("/events")}
+ className="border border-[#1D4ED8] text-[#1D4ED8] px-6 py-2 rounded-md text-sm font-medium hover:bg-[#E5F1FF] transition">
     View Upcoming Events
   </button>
 </div>
-
-
 
 <div className="bg-[#D7C9F2] pt-12 pb-4 px-4 mt-20">
   <div className="text-center mb-10">
@@ -221,8 +209,6 @@ const WomenMinistry = () => {
     </div>
   </div>
 </div>
-
-
 </div>
     </MainLayout>
   );

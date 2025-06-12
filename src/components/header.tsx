@@ -73,7 +73,7 @@ const Header = () => {
             PRAYER REQUEST
           </Link>{" "}
           |
-          <Link to="#" className="hover:text-lightpurple">
+          <Link to="our-beliefs" className="hover:text-lightpurple">
             {" "}
             OUR BELIEFS
           </Link>
