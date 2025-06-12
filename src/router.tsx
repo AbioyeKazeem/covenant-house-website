@@ -29,6 +29,7 @@ import NewsletterDetail from "./pages/NewsletterDetail";
 import Donate from "./pages/Donation";
 import GiveByText from "./pages/GiveByText";
 import OnlineDonation from "./pages/OnlineDonation";
+import ChurchLeaders from "./pages/ChurchLeaders";
 //import Event from "./pages/Event";
 import EventsCalendar from "./pages/Event";
 import EventDetails from "./pages/EventDetails";
@@ -60,6 +61,7 @@ function AppRouter() {
       <Route path="/our-beliefs" element={<OurBelief />} />
       <Route path="/our-priorities" element={<OurPriorities />} />
       <Route path="/our-mission" element={<MissionPage />} />
+      <Route path="/church-leaders" element={<ChurchLeaders />} />
       <Route path="/our-legacy" element={<OurLegacy />} />
       <Route path="/our-origin" element={<OurOrigin />} />
       <Route path="/general-overseer" element={<PastorProfile />} />

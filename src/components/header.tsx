@@ -59,7 +59,7 @@ const Header = () => {
       title: "Leadership",
       links: [
         { name: "General Overseer", path: "/general-overseer" },
-        { name: "Church Leadership", path: "/continental" },
+        { name: "Church Leadership", path: "/church-leaders" },
       ],
     },
   ];
