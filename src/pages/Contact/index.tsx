@@ -184,22 +184,22 @@ const ContactPage = () => {
         <HeaderWithoutBackButton title="OUR LOCATION" />
         <div className="max-w-[708px] h-[72px] mx-auto mt-2">
           <p className="text-[24px] leading-[100%] font-poppins font-semibold text-center text-black">
-            17/19 Idowu Taylor St, Victoria Island, Lagos 106104, Lagos, Nigeria
+            3901 Claremont Ave NE, Albuquerque, NM 87110, USA
           </p>
         </div>
 
-        <div className="max-w-[898px] mx-auto mt-10">
-          <iframe
-            src="https://www.google.com/maps?q=17/19%20Idowu%20Taylor%20St,%20Victoria%20Island,%20Lagos%20106104&output=embed"
-            width="100%"
-            height="400"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            className="rounded-xl"
-            title="Google Maps location of RCCG Covenant House"
-          />
-        </div>
+<div className="max-w-[898px] mx-auto -mt-1">
+<iframe
+  src="https://www.google.com/maps?q=3901%20Claremont%20Ave%20NE,%20Albuquerque,%20NM%2087110,%20USA&output=embed"
+  width="100%"
+  height="400"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+  className="rounded-xl"
+  title="Google Maps location of RCCG Covenant House"
+/>
+</div>
 
         {/* Contact Info Icons */}
         <div className="max-w-[900px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 text-center text-sm font-poppins">
