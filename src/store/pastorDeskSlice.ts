@@ -10,8 +10,8 @@ export interface DeskPost {
   month: string;
   year: string;
   message: string;
-  created_at?: string; // Changed from createdAt to match API response
-  updated_at?: string; // Changed from updatedAt to match API response
+  created_at?: string;
+  updated_at?: string;
 }
 
 interface PastorDeskState {

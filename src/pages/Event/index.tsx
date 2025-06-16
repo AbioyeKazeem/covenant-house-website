@@ -1,31 +1,57 @@
 import React, { useState, useEffect, JSX } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { events } from "../../service/eventService";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchEvents } from "../../store/eventSlice";
 import MainLayout from "../../MainLayout";
-import { Event } from "../../types/event";
+import { AppDispatch, RootState } from "../../store/store";
+
+// Define event interface based on your Redux state
+interface CalendarEvent {
+  id: number;
+  title: string;
+  description: string;
+  ministry: string;
+  date: string;
+  venue: string;
+  image: string;
+}
 
 const EventsCalendar = () => {
   const [currentMonth, setCurrentMonth] = useState(new Date(2025, 2)); // March 2025
-  const [monthEvents, setMonthEvents] = useState<Event[]>([]);
+  const [monthEvents, setMonthEvents] = useState<CalendarEvent[]>([]);
+
+  const dispatch = useDispatch<AppDispatch>();
+  const { events, loading, error } = useSelector(
+    (state: RootState) => state.events
+  );
+
+  useEffect(() => {
+    // Fetch events if not already loaded
+    if (events.length === 0) {
+      dispatch(fetchEvents());
+    }
+  }, [dispatch, events.length]);
 
   useEffect(() => {
     // Filter events for the current month
-    const filteredEvents = events.filter(
-      (event) =>
-        event.date.getMonth() === currentMonth.getMonth() &&
-        event.date.getFullYear() === currentMonth.getFullYear()
-    );
+    const filteredEvents = events.filter((event) => {
+      const eventDate = new Date(event.date);
+      return (
+        eventDate.getMonth() === currentMonth.getMonth() &&
+        eventDate.getFullYear() === currentMonth.getFullYear()
+      );
+    });
     setMonthEvents(filteredEvents);
-  }, [currentMonth]);
+  }, [currentMonth, events]);
 
   // Get days in month
-  const getDaysInMonth = (year, month) => {
+  const getDaysInMonth = (year: number, month: number) => {
     return new Date(year, month + 1, 0).getDate();
   };
 
   // Get day of week of first day in month (0 = Sunday, 6 = Saturday)
-  const getFirstDayOfMonth = (year, month) => {
+  const getFirstDayOfMonth = (year: number, month: number) => {
     return new Date(year, month, 1).getDay();
   };
 
@@ -44,13 +70,31 @@ const EventsCalendar = () => {
   };
 
   // Format month name
-  const formatMonth = (date) => {
+  const formatMonth = (date: Date) => {
     return date.toLocaleString("default", { month: "long" });
   };
 
   // Check if a date has events
-  const getEventsForDate = (day) => {
-    return monthEvents.filter((event) => event.date.getDate() === day);
+  const getEventsForDate = (day: number) => {
+    return monthEvents.filter((event) => {
+      const eventDate = new Date(event.date);
+      return eventDate.getDate() === day;
+    });
+  };
+
+  // Get color for event based on ministry
+  const getEventColor = (ministry: string) => {
+    const colors = {
+      "Youth Ministry": "bg-blue-500",
+      "Women Ministry": "bg-pink-500",
+      "Men Ministry": "bg-green-500",
+      "Children Ministry": "bg-yellow-500",
+      "Music Ministry": "bg-purple-500",
+      "Prayer Ministry": "bg-red-500",
+      Evangelism: "bg-orange-500",
+      Administration: "bg-gray-500",
+    };
+    return colors[ministry as keyof typeof colors] || "bg-indigo-500";
   };
 
   // Generate calendar grid
@@ -101,7 +145,9 @@ const EventsCalendar = () => {
             <Link
               to={`/events/${event.id}`}
               key={event.id}
-              className={`${event.color} text-white text-xs py-1 px-2 mt-2 rounded truncate block hover:opacity-90 transition`}
+              className={`${getEventColor(
+                event.ministry
+              )} text-white text-xs py-1 px-2 mt-2 rounded truncate block hover:opacity-90 transition`}
             >
               {event.title}
             </Link>
@@ -127,6 +173,34 @@ const EventsCalendar = () => {
 
     return days;
   };
+
+  if (loading) {
+    return (
+      <MainLayout>
+        <div className="pt-12 pb-20 flex justify-center items-center">
+          <p>Loading events...</p>
+        </div>
+      </MainLayout>
+    );
+  }
+
+  if (error) {
+    return (
+      <MainLayout>
+        <div className="pt-12 pb-20 flex justify-center items-center">
+          <div className="text-center">
+            <p className="text-red-600 mb-4">Error loading events: {error}</p>
+            <button
+              onClick={() => dispatch(fetchEvents())}
+              className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+            >
+              Retry
+            </button>
+          </div>
+        </div>
+      </MainLayout>
+    );
+  }
 
   return (
     <MainLayout>
@@ -158,7 +232,7 @@ const EventsCalendar = () => {
 
               <div className="bg-white">
                 {/* Month navigation */}
-                <div className="flex justify-between items-center mb-8 ">
+                <div className="flex justify-between items-center mb-8">
                   <button
                     onClick={prevMonth}
                     className="p-[20px] rounded-md bg-[#F2F0FAD9] hover:bg-gray-200 text-[#2F2860]"

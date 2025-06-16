@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <footer className="bg-[#2F2860] text-white py-8 px-6">
       <div className="max-w-6xl mx-auto">
@@ -26,7 +26,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    to="women-ministry"
+                    to="/women-ministry"
                     className="text-gray-300 hover:text-white transition-colors border-b border-[#F2F0FAD9] pb-1 inline-block"
                   >
                     Women Ministry
@@ -34,7 +34,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    to="youth-ministry"
+                    to="/youth-ministry"
                     className="text-gray-300 hover:text-white transition-colors border-b border-[#F2F0FAD9] pb-1 inline-block"
                   >
                     Youth Ministry
@@ -42,7 +42,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    to="children-ministry"
+                    to="/children-ministry"
                     className="text-gray-300 hover:text-white transition-colors border-b border-[#F2F0FAD9] pb-1 inline-block"
                   >
                     Children Ministry
@@ -50,8 +50,10 @@ const Footer = () => {
                 </li>
               </ul>
               <div className="mt-6">
-                <button onClick={() => navigate("/ministries")}
-                className="bg-[#ABB8E2ED] text-white px-4 py-2 rounded text-sm transition-colors">
+                <button
+                  onClick={() => navigate("/ministries")}
+                  className="bg-[#ABB8E2ED] text-white px-4 py-2 rounded text-sm transition-colors"
+                >
                   View All Ministries
                 </button>
               </div>
@@ -73,7 +75,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    to="#"
+                    to="/prayer-request"
                     className="text-gray-300 hover:text-white transition-colors border-b border-[#F2F0FAD9] pb-1 inline-block"
                   >
                     Prayer Request
@@ -81,7 +83,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    to="#"
+                    to="/open-heaven"
                     className="text-gray-300 hover:text-white transition-colors border-b border-[#F2F0FAD9] pb-1 inline-block"
                   >
                     Open Heavens
@@ -97,7 +99,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    to="#"
+                    to="/sunday-school"
                     className="text-gray-300 hover:text-white transition-colors border-b border-[#F2F0FAD9] pb-1 inline-block"
                   >
                     Sunday School Manual
@@ -105,8 +107,10 @@ const Footer = () => {
                 </li>
               </ul>
               <div className="mt-6">
-                <button onClick={() => navigate("/resources")}
-                className="bg-[#ABB8E2ED]  text-white px-4 py-2 rounded text-sm transition-colors">
+                <button
+                  onClick={() => navigate("/resources")}
+                  className="bg-[#ABB8E2ED]  text-white px-4 py-2 rounded text-sm transition-colors"
+                >
                   View All Resources
                 </button>
               </div>
