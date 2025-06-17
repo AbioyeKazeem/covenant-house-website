@@ -207,8 +207,8 @@ const ContactPage = () => {
           <div>
             <MdEmail className="mx-auto mb-2 w-6 h-6 text-[#2F2860]" />
             <p className="font-semibold">Email Us</p>
-            <p>info@rccgchr.org</p>
-            <p>webmaster@rccgchr.org</p>
+            <p>covenanthouserccg@gmail.com</p>
+            <p>info@covenanthouserccg.org</p>
           </div>
 
           {/* Prompt Response */}
@@ -221,30 +221,30 @@ const ContactPage = () => {
             <p className="text-center">
               <strong>Finance:</strong> | Adediwura Aromolaran |{" "}
               <a
-                href="mailto:finance@rccgna.org"
+                href="mailto:finance@covenanthouserccg.org"
                 className="text-blue-600 no-underline"
               >
-                finance@rccgna.org
+                finance@covenanthouserccg.org
               </a>
             </p>
 
             <p className="text-center mt-2">
               <strong>Information and Other Inquiries:</strong> | Esther Oleru |{" "}
               <a
-                href="mailto:eoleru@rccgna.org"
+                href="mailto:inquiries@covenanthouserccg.org"
                 className="text-blue-600 no-underline"
               >
-                eoleru@rccgna.org
+                inquiries@covenanthouserccg.org
               </a>
             </p>
 
             <p className="text-center mt-2">
               <strong>Facilities:</strong> | Tony Fadele |{" "}
               <a
-                href="mailto:tfadele@rccgna.org"
+                href="mailto:facilities@covenanthouserccg.org"
                 className="text-blue-600 no-underline"
               >
-                tfadele@rccgna.org
+                facilities@covenanthouserccg.org
               </a>
             </p>
 
@@ -263,7 +263,7 @@ const ContactPage = () => {
           <div>
             <MdPhone className="mx-auto mb-2 w-6 h-6 text-[#2F2860]" />
             <p className="font-semibold">Call Us On</p>
-            <p>Office: (903) 213-8006</p>
+            <p>Office: (505) 522-3444</p>
             <p>Fax: (903) 920-0461</p>
           </div>
         </div>

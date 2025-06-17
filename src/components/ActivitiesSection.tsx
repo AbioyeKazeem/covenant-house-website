@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const activities = [
   {
@@ -10,6 +11,7 @@ const activities = [
     title: "Events",
     description: "Upcoming events, conventions and meetings",
     buttonText: "View all Events",
+    route: "/events/all/",
   },
   {
     title: "Live Streaming",
@@ -20,10 +22,19 @@ const activities = [
     title: "Continental Overseer’s Desk",
     description: "Monthly inspirational messages from the pastor",
     buttonText: "Read Message",
+    route: "/pastor-desk/",
   },
 ];
 
 const ActivitiesSection = () => {
+  const navigate = useNavigate();
+
+  const handleClick = (route) => {
+    if (route) {
+      navigate(route);
+    }
+  };
+
   return (
     <section
       id="activities-section"
@@ -40,16 +51,19 @@ const ActivitiesSection = () => {
               <div className="hidden md:block absolute left-0 top-1/2 h-full border-l-2 border-[#FDFBFE] transform -translate-y-1/2"></div>
             )}
 
-            {/* Content wrapped in flex-grow */}
+            {/* Content */}
             <div className="flex flex-col flex-grow">
               <h3 className="text-lg font-bold">{activity.title}</h3>
-              <p className="text-sm font-normal mt-2 text-[#FFFFFF">
+              <p className="text-sm font-normal mt-2 text-[#FFFFFF]">
                 {activity.description}
               </p>
             </div>
 
-            {/* Button aligned at bottom */}
-            <button className="mt-auto border-2 border-white text-white px-5 py-2 rounded-md text-sm font-semibold hover:bg-white hover:text-[#1E1B4B] transition">
+            {/* Button */}
+            <button
+              onClick={() => handleClick(activity.route)}
+              className="mt-auto border-2 border-white text-white px-5 py-2 rounded-md text-sm font-semibold hover:bg-white hover:text-[#1E1B4B] transition"
+            >
               {activity.buttonText}
             </button>
           </div>
@@ -60,3 +74,4 @@ const ActivitiesSection = () => {
 };
 
 export default ActivitiesSection;
+

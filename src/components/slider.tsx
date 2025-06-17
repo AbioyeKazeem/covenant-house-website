@@ -18,7 +18,6 @@ const Slider = () => {
     dispatch(fetchSliders());
   }, [dispatch]);
 
-  // Fallback slides in case no sliders are loaded
   const fallbackSlides = [
     {
       id: 1,
@@ -34,7 +33,8 @@ const Slider = () => {
     },
     {
       id: 3,
-      image: "/banner3.jpg",
+      image:
+        "/banner3.jpg",
       title:
         "Trust in the Lord with all your heart and lean not on your own understanding.",
       verse: "Proverbs 3:5",
@@ -54,7 +54,6 @@ const Slider = () => {
     },
   ];
 
-  // Use fetched sliders if available, otherwise use fallback
   const slidesToDisplay = sliders.length > 0 ? sliders : fallbackSlides;
 
   if (loading) {
@@ -100,25 +99,24 @@ const Slider = () => {
         {slidesToDisplay.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div
-              className="w-full h-[658px] bg-cover bg-center flex flex-col items-center py-[56px] text-white text-center px-6"
+              className="w-full h-[658px] bg-cover bg-center flex flex-col text-white text-center px-6"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
-              <div className="max-w-[742px]">
-                <h1 className="text-4xl md:text-5xl font-bold">
-                  {slide.title}
-                </h1>
-
+              {/* Title and Verse */}
+              <div className="max-w-[742px] mt-[56px] mx-auto">
+                <h1 className="text-4xl md:text-5xl font-bold">{slide.title}</h1>
                 <div className="flex justify-between px-[30px]">
                   <p></p>
                   <p className="italic text-xl mt-2">— {slide.verse}</p>
                 </div>
               </div>
-              <div className="max-w-[742px] px-[53px] mt-[56px]">
-                <p className="mt-4 text-lg font-medium">
-                  Worship with us, grow in faith, and experience God's presence
-                  in a loving community.
-                </p>
-                <button className="mt-[56px] bg-[#ABB8E2ED] text-[#2F2860] px-8 py-2 rounded-md text-lg font-medium">
+
+              {/* Spacer to push the button down */}
+              <div className="flex-grow" />
+
+              {/* Call-to-action Button */}
+              <div className="max-w-[742px] mx-auto mb-[60px]">
+                <button className="bg-[#ABB8E2ED] text-[#2F2860] px-8 py-2 rounded-md text-lg font-medium">
                   Join us this Sunday!
                 </button>
               </div>

@@ -155,35 +155,35 @@ const WomenMinistry = () => {
   <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
     <div className="text-center">
       <img
-        src="/womenleader1.jpg"
-        alt="John Chukwu"
+        src="/blankplaceholderfemale.jpg"
+        alt="Anonymous"
         className="w-40 h-40 mx-auto object-cover rounded-xl shadow-md"
       />
-      <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Angnes Jade</p>
+      <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Anonymous</p>
       <p className="text-sm text-[#1D1D1D]">MIM Executive</p>
     </div>
     <div className="text-center">
       <img
-        src="/womenleader2.jpg"
-        alt="Michael Adegbenro"
+        src="/blankplaceholderfemale.jpg"
+        alt="Anonymous"
         className="w-40 h-40 mx-auto object-cover rounded-xl shadow-md"
       />
-      <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Amanda Kolu</p>
+      <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Anonymous</p>
       <p className="text-sm text-[#1D1D1D]">MIM Executive</p>
     </div>
     <div className="text-center">
       <img
-        src="/womenleader3.jpg"
-        alt="David Johnson"
+        src="/blankplaceholderfemale.jpg"
+        alt="Anonymous"
         className="w-40 h-40 mx-auto object-cover rounded-xl shadow-md"
       />
-      <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Geneveive Nneji</p>
+      <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Anonymous</p>
       <p className="text-sm text-[#1D1D1D]">MIM Executive</p>
     </div>
     <div className="text-center">
       <img
-        src="/womenleader2.jpg"
-        alt="Ayinde Tolu"
+        src="/blankplaceholderfemale.jpg"
+        alt="Anonymous"
         className="w-40 h-40 mx-auto object-cover rounded-xl shadow-md"
       />
       <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Sewa Afolabi</p>
@@ -191,20 +191,20 @@ const WomenMinistry = () => {
     </div>
     <div className="text-center">
       <img
-        src="/womenleader3.jpg"
-        alt="Michael Ali"
+        src="/blankplaceholderfemale.jpg"
+        alt="Anonymous"
         className="w-40 h-40 mx-auto object-cover rounded-xl shadow-md"
       />
-      <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Grace Alinko</p>
+      <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Anonymous</p>
       <p className="text-sm text-[#1D1D1D]">MIM Executive</p>
     </div>
     <div className="text-center">
       <img
-        src="/womenleader1.jpg"
-        alt="Solomon Alex"
+        src="/blankplaceholderfemale.jpg"
+        alt="Anonymous"
         className="w-40 h-40 mx-auto object-cover rounded-xl shadow-md"
       />
-      <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Sade Wellington</p>
+      <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Anonymous</p>
       <p className="text-sm text-[#1D1D1D]">MIM Executive</p>
     </div>
   </div>

@@ -18,7 +18,7 @@ const Footer = () => {
               <ul className="space-y-4">
                 <li>
                   <Link
-                    to="men-ministry"
+                    to="/men-ministry"
                     className="text-gray-300 hover:text-white transition-colors border-b border-[#F2F0FAD9] pb-1 inline-block"
                   >
                     Men Ministry
@@ -132,21 +132,21 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-gray-400" />
                 <span className="text-gray-300 text-sm">
-                  Email: rccgCH25@gmail.com
+                  Email: covenanthouserccg@gmail.com
                 </span>
               </div>
 
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-gray-400" />
                 <span className="text-gray-300 text-sm">
-                  Phone: +234 1234 567 78
+                  Phone: (505) 522-3444
                 </span>
               </div>
 
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-gray-400" />
                 <span className="text-gray-300 text-sm">
-                  Location: 123 Street, Lagos, Nigeria.
+                  Location:3901 Claremont Ave NE, Albuquerque, NM 87110.
                 </span>
               </div>
             </div>

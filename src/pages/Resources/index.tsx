@@ -19,7 +19,7 @@ const resources = [
   {
     title: "Key Ministries",
     description: "Key resources for members and pastors",
-    link: "#",
+    link: "/ministries",
     icon: <FaChurch className="text-4xl text-[#2F2860]" />,
   },
   {

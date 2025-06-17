@@ -69,17 +69,17 @@ const Header = () => {
       {/* Logo & Mobile Menu */}
       <div className="flex justify-between items-center px-4 font-medium md:px-[93px] py-[16px]">
         <div className="hidden md:block text-[#100E22]">
-          <Link to="prayer-request" className="hover:text-lightpurple">
+          <Link to="/prayer-request" className="hover:text-lightpurple">
             PRAYER REQUEST
           </Link>{" "}
           |
-          <Link to="our-beliefs" className="hover:text-lightpurple">
+          <Link to="/our-beliefs" className="hover:text-lightpurple">
             {" "}
             OUR BELIEFS
           </Link>
         </div>
         <div>
-          <img src="/logo.png" alt="Church Logo" className="" />
+     <img src="/Blue2LogonoBack.png" alt="Church Logo" className="w-[180px] h-[100px]" />
         </div>
         <div className="hidden md:block text-[#100E22]">
           <Link to="#" className="hover:text-lightpurple">
@@ -107,7 +107,7 @@ const Header = () => {
         <nav className="hidden md:flex flex-1 justify-center items-center space-x-6 lg:space-x-10 text-sm font-semibold">
           {[
             { name: "HOME", path: "/" },
-            { name: "THE CHURCH", path: "/church", hasDropdown: true },
+            { name: "THE CHURCH", path: "/church/", hasDropdown: true },
             { name: "MINISTRIES", path: "/ministries" },
             { name: "RESOURCES", path: "/resources" },
             { name: "EVENTS", path: "/events" },
@@ -180,7 +180,7 @@ const Header = () => {
             { name: "HOME", path: "/" },
             {
               name: "THE CHURCH",
-              path: "/church",
+              path: "/",
               hasDropdown: true,
               dropdownItems: churchDropdownItems,
             },

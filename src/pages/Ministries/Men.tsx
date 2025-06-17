@@ -146,56 +146,56 @@ const MenMinistry = () => {
           <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             <div className="text-center">
               <img
-                src="/menleader1.jpg"
-                alt="John Chukwu"
+                src="/blankplaceholdermale.jpg"
+                alt="Anonymous"
                 className="w-40 h-40 mx-auto object-cover rounded-xl shadow-md"
               />
-              <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">John Chukwu</p>
+              <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Anonymous</p>
               <p className="text-sm text-[#1D1D1D]">MIM Executive</p>
             </div>
             <div className="text-center">
               <img
-                src="/menleader2.jpg"
-                alt="Michael Adegbenro"
+                src="/blankplaceholdermale.jpg"
+                alt="Anonymous"
                 className="w-40 h-40 mx-auto object-cover rounded-xl shadow-md"
               />
-              <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Michael Adegbenro</p>
+              <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Anonymous</p>
               <p className="text-sm text-[#1D1D1D]">MIM Executive</p>
             </div>
             <div className="text-center">
               <img
-                src="/menleader3.jpg"
-                alt="David Johnson"
+                src="/blankplaceholdermale.jpg"
+                alt="Anonymous"
                 className="w-40 h-40 mx-auto object-cover rounded-xl shadow-md"
               />
-              <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">David Johnson</p>
+              <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Anonymous</p>
               <p className="text-sm text-[#1D1D1D]">MIM Executive</p>
             </div>
             <div className="text-center">
               <img
-                src="/menleader2.jpg"
-                alt="Ayinde Tolu"
+                src="/blankplaceholdermale.jpg"
+                alt="Anonymous"
                 className="w-40 h-40 mx-auto object-cover rounded-xl shadow-md"
               />
-              <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Ayinde Tolu</p>
+              <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Anonymous</p>
               <p className="text-sm text-[#1D1D1D]">MIM Executive</p>
             </div>
             <div className="text-center">
               <img
-                src="/menleader3.jpg"
-                alt="Michael Ali"
+                src="/blankplaceholdermale.jpg"
+                alt="Anonymous"
                 className="w-40 h-40 mx-auto object-cover rounded-xl shadow-md"
               />
-              <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Michael Ali</p>
+              <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Anonymous</p>
               <p className="text-sm text-[#1D1D1D]">MIM Executive</p>
             </div>
             <div className="text-center">
               <img
-                src="/menleader1.jpg"
-                alt="Solomon Alex"
+                src="/blankplaceholdermale.jpg"
+                alt="Anonymous"
                 className="w-40 h-40 mx-auto object-cover rounded-xl shadow-md"
               />
-              <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Solomon Alex</p>
+              <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Anonymous</p>
               <p className="text-sm text-[#1D1D1D]">MIM Executive</p>
             </div>
           </div>
