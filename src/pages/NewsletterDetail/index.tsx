@@ -1,267 +1,3 @@
-// // NewsletterDetail.tsx
-// import { useState, useEffect } from "react";
-// import { useParams, Link } from "react-router-dom";
-// import HeaderWithBackButton from "../../components/HeaderWithBackButton";
-// import MainLayout from "../../MainLayout";
-
-// // Define the Newsletter interface with content property
-// interface Newsletter {
-//   id: number;
-//   title: string;
-//   date: string;
-//   image: string;
-//   content: string;
-//   excerpt?: string;
-// }
-
-// const NewsletterDetail = () => {
-//   const { id } = useParams();
-//   const [newsletter, setNewsletter] = useState<Newsletter | null>(null);
-//   const [relatedNewsletters, setRelatedNewsletters] = useState<Newsletter[]>(
-//     []
-//   );
-//   const [loading, setLoading] = useState(true);
-
-//   // Mock data - in a real app, you would fetch this from an API
-//   const newsletters: Newsletter[] = [
-//     {
-//       id: 1,
-//       title: "Joy Unspeakable",
-//       date: "March 2025",
-//       image: "/blog-details.png",
-//       excerpt:
-//         'I welcome you to the third month of the year of the "Onward Christian Soldier"...',
-//       content: `
-//         <div>
-//           <p>I welcome you to the third month of the year of the "Onward Christian Soldier", our landmark year. Three is a significant number in the Bible because it means completion, perfection, divine fullness. It represents the Trinity: Father, Son, and Holy Spirit. The third day, third week, third month, and so on. The Father, Son, and Holy Spirit were all present at creation. I desire into your life this month that every good dream, idea, and hope shall be resurrected in Jesus' name.</p>
-
-//           <blockquote>"When having not seen ye love; in whom, though now ye see him not, yet believing, ye rejoice with joy unspeakable and full of glory." (1 Peter 1:8)</blockquote>
-
-//           <h3>JOY DEFINED</h3>
-//           <p>Artificial Intelligence (AI) defines joy as: "That feeling you get when something lights you up inside—like when you hear your favorite song, laugh with friends, or see a beautiful sunset. It's that upbeat, feel-good high emotion, yet it has more depth compared to the memes. It's different from just feeling happy, more so joy often stays present even in tough times, like finding a little spark of hope or meaning when things aren't perfect."</p>
-
-//           <p>According to the Bible:</p>
-//           <ul>
-//             <li>Joy is a facilitator of one's access to revelation (Isaiah 12:3, Psalm 89:15). It takes joy to access the path of life. Therefore, the more joyful one is, the greater one's access to revelation.</li>
-//             <li>Joy is strength (Nehemiah 8:10).</li>
-//             <li>Joy adds health and vitality as joyful people do not get weakened (Proverbs 17:22, 18:14; Nehemiah 8:10, Psalms 84:7).</li>
-//             <li>Joy is the facilitator of supernatural fruitfulness (Psalms 67:4-7).</li>
-//           </ul>
-
-//           <p>Most sicknesses and diseases are traceable to a broken heart because the heart is the engine of the body. When the heart is broken, it breaks down the immune system, making one susceptible to diseases. A car with a broken engine cannot run. It will be grounded. The same applies to the human body. Our body cannot be supported by the heart when it is broken. This is seen in Proverbs 17:22: "A merry heart doeth good like a medicine: but a broken heart drieth the bones." It says if anyone cannot find joy in Christ, he cannot find it anywhere else (Luke 2:10-11; Psalm 16:11).</p>
-
-//           <p>When one is joyless, one is helpless, downcast, and wandering in life. Without joy, one cannot keep Christ at the forefront of one's mind and one cannot obey God's word.</p>
-//         </div>
-//       `,
-//     },
-//     {
-//       id: 2,
-//       title: "God of Miracles - Jubilee",
-//       date: "February 2025",
-//       image: "/blog-details.png",
-//       excerpt:
-//         'Welcome you to February. As year of the "Onward Christian Soldier" unfolds...',
-//       content: `
-//         <div>
-//           <p>Welcome you to February. As year of the "Onward Christian Soldier" unfolds, we are reminded of the faithfulness of God to His children. We believe this month will be filled with God's miraculous interventions in every area of your life.</p>
-
-//           <p>February marks our Jubilee celebration as a church. The Jubilee in biblical times was a special year of emancipation, restoration, and God's special favor. It was a time when debts were forgiven, slaves were freed, and land returned to its original owners.</p>
-
-//           <p>In this our Jubilee year, we declare that:</p>
-//           <ul>
-//             <li>Every debt in your life is canceled</li>
-//             <li>Every form of bondage is broken</li>
-//             <li>Whatever you have lost shall be restored</li>
-//             <li>God's special favor shall rest upon you</li>
-//           </ul>
-
-//           <p>As we celebrate God's faithfulness over the years, we are reminded of His promise in Joel 2:25-26: "I will restore to you the years that the swarming locust has eaten... You shall eat in plenty and be satisfied, and praise the name of the LORD your God, Who has dealt wondrously with you."</p>
-
-//           <p>This month, expect God to show Himself strong as the God of miracles. Remember, the God who parted the Red Sea, brought water from the rock, and raised the dead is still in the business of working miracles today.</p>
-//         </div>
-//       `,
-//     },
-//     {
-//       id: 3,
-//       title: "The Onward Christian Soldier",
-//       date: "January 2025",
-//       image: "/blog-details.png",
-
-//       excerpt:
-//         "Welcome to 2025! As it unfolds before us, we see it as a year to press on...",
-//       content: `
-//         <div>
-//           <p>Welcome to 2025! As it unfolds before us, we see it as a year to press on, to move forward, to make progress in every area of our lives. This is a year for mighty men of valor, Christian soldiers marching as to war, with the cross of Jesus going on before.</p>
-
-//           <p>The theme for this year is "The Onward Christian Soldier." It is derived from the powerful hymn written by Sabine Baring-Gould in 1865, which reminds us of our call to spiritual warfare and advancement in the kingdom of God.</p>
-
-//           <p>As Christian soldiers, we are called to:</p>
-//           <ul>
-//             <li>Put on the whole armor of God (Ephesians 6:11-18)</li>
-//             <li>Fight the good fight of faith (1 Timothy 6:12)</li>
-//             <li>Be strong in the Lord and in the power of His might (Ephesians 6:10)</li>
-//             <li>Advance the kingdom of God (Matthew 11:12)</li>
-//           </ul>
-
-//           <p>This year, I challenge you to move forward in your spiritual life, your family life, your career, your ministry, and in every area where God has placed you. Remember, no Christian soldier gets crowned without discipline, focus, and determination.</p>
-
-//           <p>Let us march onward, not in our own strength, but in the strength of the Lord, knowing that "the weapons of our warfare are not carnal but mighty in God for pulling down strongholds" (2 Corinthians 10:4).</p>
-//         </div>
-//       `,
-//     },
-//     {
-//       id: 4,
-//       title: "Fight for your family",
-//       date: "November 2023",
-//       image: "/blog-details.png",
-//       excerpt: "This month we focus on the importance of family...",
-//       content: `
-//         <div>
-//           <p>This month we focus on the importance of family and our role as Christians in protecting and nurturing our homes...</p>
-//         </div>
-//       `,
-//     },
-//     {
-//       id: 5,
-//       title: "Revive us, O Lord",
-//       date: "October 2023",
-//       image: "/blog-details.png",
-
-//       excerpt: "This month we seek spiritual renewal and revival...",
-//       content: `
-//         <div>
-//           <p>This month we seek spiritual renewal and revival in our personal lives and in our church community...</p>
-//         </div>
-//       `,
-//     },
-//     {
-//       id: 6,
-//       title: "The Speed of Love",
-//       date: "September 2023",
-//       image: "/blog-details.png",
-//       excerpt:
-//         "Love moves at a divine pace. This month we explore how God's love operates...",
-//       content: `
-//         <div>
-//           <p>Love moves at a divine pace. This month we explore how God's love operates and how we can embody it...</p>
-//         </div>
-//       `,
-//     },
-//   ];
-
-//   useEffect(() => {
-//     // Simulate API call
-//     setLoading(true);
-
-//     setTimeout(() => {
-//       const parsedId = id ? parseInt(id) : 0;
-//       const foundNewsletter = newsletters.find((n) => n.id === parsedId);
-//       setNewsletter(foundNewsletter || null);
-
-//       // Get related newsletters (excluding current one)
-//       const related = newsletters.filter((n) => n.id !== parsedId).slice(0, 3);
-//       setRelatedNewsletters(related);
-
-//       setLoading(false);
-//     }, 500);
-//   }, [id]);
-
-//   if (loading) {
-//     return (
-//       <MainLayout>
-//         <div className=" px-4 pt-10 pb-20">
-//           <HeaderWithBackButton title="PASTOR'S DESK" />
-//           <div className="flex justify-center items-center h-64">
-//             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-900"></div>
-//           </div>
-//         </div>
-//       </MainLayout>
-//     );
-//   }
-
-//   if (!newsletter) {
-//     return (
-//       <MainLayout>
-//         <div className=" px-4 pt-10 pb-20">
-//           <HeaderWithBackButton title="PASTOR'S DESK" />
-//           <div className="text-center mt-10">
-//             <h2 className="text-xl font-medium">Newsletter not found</h2>
-//             <p className="mt-2">
-//               The newsletter you're looking for doesn't exist or has been
-//               removed.
-//             </p>
-//             <Link
-//               to="/pastor-desk"
-//               className="mt-4 inline-block bg-indigo-900 text-white px-4 py-2 rounded"
-//             >
-//               Back to Pastor's Desk
-//             </Link>
-//           </div>
-//         </div>
-//       </MainLayout>
-//     );
-//   }
-
-//   return (
-//     <MainLayout>
-//       <div className="px-4 pt-10 pb-20">
-//         <HeaderWithBackButton title="PASTOR'S DESK" />
-
-//         <div className="mt-8 flex gap-[28px] max-w-[1080px] mx-auto font-poppins">
-//           <div className="flex flex-col max-w-[715px] gap-6 mb-8">
-//             <div className=" ">
-//               <div className="bg-amber-50 p-4 rounded-md border border-amber-100">
-//                 <img
-//                   src={newsletter.image || "/blog-details.png"}
-//                   alt={newsletter.title}
-//                   className="w-full h-auto object-cover rounded"
-//                 />
-//               </div>
-//             </div>
-
-//             <div className="">
-//               <div className="mb-4">
-//                 <h3 className="text-indigo-900 text-xl font-medium">
-//                   {newsletter.date} – {newsletter.title}
-//                 </h3>
-//               </div>
-
-//               <div
-//                 className="prose max-w-none"
-//                 dangerouslySetInnerHTML={{ __html: newsletter.content }}
-//               ></div>
-//             </div>
-//           </div>
-
-//           <div className="mt-12">
-//             <h3 className="text-lg font-medium mb-4 text-indigo-900">
-//               RECENT MESSAGES
-//             </h3>
-
-//             <div className="space-y-2">
-//               {newsletters.map((item) => (
-//                 <Link
-//                   key={item.id}
-//                   to={`/pastor-desk/${item.id}`}
-//                   className={`block hover:text-indigo-700 ${
-//                     id && parseInt(id) === item.id
-//                       ? "text-indigo-700 font-medium"
-//                       : "text-indigo-900"
-//                   }`}
-//                 >
-//                   {item.date} – {item.title}
-//                 </Link>
-//               ))}
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </MainLayout>
-//   );
-// };
-
-// export default NewsletterDetail;
-
 // NewsletterDetail.tsx
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
@@ -366,40 +102,156 @@ const NewsletterDetail = () => {
 
   // Function to format the message content with basic HTML structure
   const formatMessage = (message: string) => {
-    // Split by double line breaks to create paragraphs
-    const paragraphs = message.split("\n\n").filter((p) => p.trim());
+    // Split by double line breaks to create paragraphs, but also handle single line breaks
+    let paragraphs = message.split("\n\n").filter((p) => p.trim());
+
+    // If no double line breaks found, split by single line breaks
+    if (paragraphs.length === 1) {
+      paragraphs = message.split("\n").filter((p) => p.trim());
+    }
 
     return paragraphs
       .map((paragraph, index) => {
-        // Check if it's a heading (usually shorter lines or lines with certain patterns)
+        const trimmedParagraph = paragraph.trim();
+
+        // Check if it's the salvation call-to-action
         if (
-          paragraph.length < 100 &&
-          paragraph.toUpperCase() === paragraph &&
-          paragraph.trim()
+          trimmedParagraph.includes("To give your life to Jesus") ||
+          trimmedParagraph.includes('text "saved"') ||
+          trimmedParagraph.includes("covenanthouserccg@gmail.com")
         ) {
-          return `<h3 key=${index} style="font-weight: bold; margin: 20px 0 10px 0; color: #312e81;">${paragraph}</h3>`;
+          // Format the salvation message with special styling
+          let formattedText = trimmedParagraph;
+
+          // Make email blue and underlined
+          formattedText = formattedText.replace(
+            /covenanthouserccg@gmail\.com/g,
+            '<a href="mailto:covenanthouserccg@gmail.com" style="color: #2563eb; text-decoration: underline;">covenanthouserccg@gmail.com</a>'
+          );
+
+          return `<div key=${index} style="background-color: #fef3c7; padding: 16px; border-radius: 8px; margin: 20px 0; border: 1px solid #fbbf24;">
+            <p style="margin: 0; line-height: 1.6; font-weight: 500;">${formattedText}</p>
+          </div>`;
+        }
+
+        // Check if it's a title/heading (usually the first line)
+        if (
+          index === 0 &&
+          trimmedParagraph.length < 50 &&
+          !trimmedParagraph.includes(".")
+        ) {
+          return `<h2 key=${index} style="font-weight: bold; font-size: 28px; margin: 20px 0 8px 0; color: #312e81; text-align: center;">${trimmedParagraph}</h2>`;
+        }
+
+        // Check if it's a scripture reference (lines that look like "Book Chapter:Verse")
+        if (trimmedParagraph.match(/^[A-Za-z\s]+\s+\d+:\d+(-\d+)?$/)) {
+          return `<h3 key=${index} style="font-weight: 500; font-size: 16px; margin: 0 0 24px 0; color: #312e81; font-style: italic; text-align: center;">${trimmedParagraph}</h3>`;
+        }
+
+        // Check if it's a heading (shorter lines, all caps, or ending with certain patterns)
+        if (
+          (trimmedParagraph.length < 100 &&
+            trimmedParagraph.toUpperCase() === trimmedParagraph) ||
+          trimmedParagraph.endsWith(":") ||
+          (trimmedParagraph.length < 50 && !trimmedParagraph.includes("."))
+        ) {
+          return `<h3 key=${index} style="font-weight: bold; font-size: 18px; margin: 20px 0 10px 0; color: #312e81;">${trimmedParagraph}</h3>`;
         }
 
         // Check if it's a quote (lines starting with quotes)
-        if (paragraph.startsWith('"') && paragraph.endsWith('"')) {
-          return `<blockquote key=${index} style="border-left: 4px solid #312e81; padding-left: 16px; margin: 16px 0; font-style: italic; color: #4b5563;">${paragraph}</blockquote>`;
+        if (
+          trimmedParagraph.startsWith('"') &&
+          trimmedParagraph.endsWith('"')
+        ) {
+          return `<blockquote key=${index} style="border-left: 4px solid #312e81; padding-left: 16px; margin: 16px 0; font-style: italic; color: #4b5563; background-color: #f8fafc; padding: 16px; border-radius: 4px;">${trimmedParagraph}</blockquote>`;
+        }
+
+        // Check for blessing line
+        if (trimmedParagraph.includes("God bless")) {
+          return `<p key=${index} style="margin: 20px 0; line-height: 1.6; font-weight: 600; color: #312e81; text-align: center;">${trimmedParagraph}</p>`;
         }
 
         // Regular paragraph
-        return `<p key=${index} style="margin: 16px 0; line-height: 1.6;">${paragraph}</p>`;
+        return `<p key=${index} style="margin: 16px 0; line-height: 1.7; text-align: justify;">${trimmedParagraph}</p>`;
       })
       .join("");
   };
 
   return (
     <MainLayout>
-      <div className="px-4 pt-10 pb-20">
+      <div className="px-4 sm:px-6 lg:px-8 pt-10 pb-20">
         <HeaderWithBackButton title="PASTOR'S DESK" />
 
-        <div className="mt-8 flex gap-[28px] max-w-[1080px] mx-auto font-poppins">
-          <div className="flex flex-col max-w-[715px] gap-6 mb-8">
-            <div className="">
-              <div className="bg-amber-50 p-4 rounded-md border border-amber-100">
+        <div className="mt-8 max-w-7xl mx-auto font-poppins">
+          {/* Desktop and Tablet Layout */}
+          <div className="hidden md:flex gap-8 lg:gap-12">
+            {/* Main Content */}
+            <div className="flex-1 max-w-4xl">
+              {/* Image Section */}
+              <div className="mb-6">
+                <div className="bg-amber-50 p-4 rounded-md border border-amber-100">
+                  <img
+                    src={currentPost.image || "/blog-details.png"}
+                    alt={currentPost.title}
+                    className="w-full h-auto object-cover rounded"
+                  />
+                </div>
+              </div>
+
+              {/* Content Section */}
+              <div>
+                <div className="mb-6">
+                  <h3 className="text-indigo-900 text-2xl lg:text-3xl font-medium text-center">
+                    {currentPost.title}
+                  </h3>
+                </div>
+
+                <div
+                  className="prose max-w-none prose-lg"
+                  dangerouslySetInnerHTML={{
+                    __html: formatMessage(currentPost.message),
+                  }}
+                ></div>
+              </div>
+            </div>
+
+            {/* Sidebar */}
+            <div className="w-80 flex-shrink-0">
+              <div className="sticky top-8">
+                <h3 className="text-lg font-medium mb-4 text-indigo-900">
+                  RECENT MESSAGES
+                </h3>
+
+                <div className="space-y-3">
+                  {relatedPosts.map((post) => (
+                    <Link
+                      key={post.id}
+                      to={`/pastor-desk/${post.id}`}
+                      className={`block hover:text-indigo-700 text-sm transition-colors duration-200 p-2 rounded-md hover:bg-indigo-50 ${
+                        id && parseInt(id) === post.id
+                          ? "text-indigo-700 font-medium bg-indigo-50"
+                          : "text-indigo-900"
+                      }`}
+                    >
+                      {post.month} {post.year} – {post.title}
+                    </Link>
+                  ))}
+                </div>
+
+                {relatedPosts.length === 0 && (
+                  <p className="text-gray-500 text-sm">
+                    No other messages available
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Layout */}
+          <div className="md:hidden">
+            {/* Image Section */}
+            <div className="mb-6">
+              <div className="bg-amber-50 p-3 rounded-md border border-amber-100">
                 <img
                   src={currentPost.image || "/blog-details.png"}
                   alt={currentPost.title}
@@ -408,48 +260,56 @@ const NewsletterDetail = () => {
               </div>
             </div>
 
-            <div className="">
-              <div className="mb-4">
-                <h3 className="text-indigo-900 text-xl font-medium">
-                  {currentPost.month} {currentPost.year} – {currentPost.title}
-                </h3>
-              </div>
+            {/* Title */}
+            <div className="mb-6">
+              <h3 className="text-indigo-900 text-xl sm:text-2xl font-medium text-center">
+                {currentPost.title}
+              </h3>
+            </div>
 
+            {/* Content */}
+            <div className="mb-8">
               <div
-                className="prose max-w-none"
+                className="prose max-w-none prose-sm sm:prose-base"
                 dangerouslySetInnerHTML={{
                   __html: formatMessage(currentPost.message),
                 }}
               ></div>
             </div>
-          </div>
 
-          <div className="mt-12">
-            <h3 className="text-lg font-medium mb-4 text-indigo-900">
-              RECENT MESSAGES
-            </h3>
+            {/* Related Posts - Mobile */}
+            <div className="border-t border-gray-200 pt-6">
+              <h3 className="text-lg font-medium mb-4 text-indigo-900">
+                RECENT MESSAGES
+              </h3>
 
-            <div className="space-y-2">
-              {relatedPosts.map((post) => (
-                <Link
-                  key={post.id}
-                  to={`/pastor-desk/${post.id}`}
-                  className={`block hover:text-indigo-700 text-sm ${
-                    id && parseInt(id) === post.id
-                      ? "text-indigo-700 font-medium"
-                      : "text-indigo-900"
-                  }`}
-                >
-                  {post.month} {post.year} – {post.title}
-                </Link>
-              ))}
+              <div className="space-y-3">
+                {relatedPosts.map((post) => (
+                  <Link
+                    key={post.id}
+                    to={`/pastor-desk/${post.id}`}
+                    className={`block hover:text-indigo-700 text-sm transition-colors duration-200 p-3 rounded-md hover:bg-indigo-50 border ${
+                      id && parseInt(id) === post.id
+                        ? "text-indigo-700 font-medium bg-indigo-50 border-indigo-200"
+                        : "text-indigo-900 border-gray-200"
+                    }`}
+                  >
+                    <div className="font-medium">
+                      {post.month} {post.year}
+                    </div>
+                    <div className="text-xs mt-1 text-gray-600">
+                      {post.title}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+
+              {relatedPosts.length === 0 && (
+                <p className="text-gray-500 text-sm text-center py-4">
+                  No other messages available
+                </p>
+              )}
             </div>
-
-            {relatedPosts.length === 0 && (
-              <p className="text-gray-500 text-sm">
-                No other messages available
-              </p>
-            )}
           </div>
         </div>
       </div>
