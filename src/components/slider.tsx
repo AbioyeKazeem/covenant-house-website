@@ -83,7 +83,6 @@ const Slider = () => {
       </div>
     );
   }
-
   return (
     <div className="w-full h-[658px]">
       <Swiper
@@ -127,5 +126,4 @@ const Slider = () => {
     </div>
   );
 };
-
 export default Slider;

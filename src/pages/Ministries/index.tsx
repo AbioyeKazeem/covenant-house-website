@@ -16,7 +16,10 @@ const MinistriesPage = () => {
           <div className="row-start-1 col-start-2">
             <Link to="/men-ministry">
               <div className="bg-white shadow-md rounded-lg overflow-hidden text-center w-[180px] cursor-pointer hover:shadow-lg transition">
-                <img src="/men.jpg" alt="Men Ministry" className="w-full h-[160px] object-cover" />
+                <img src="/Men.jpg" 
+                alt="Men Ministry" 
+                className="w-full h-[160px] object-cover" 
+                />
                 <p className="py-2 border-t font-medium text-sm">Men Ministry</p>
               </div>
             </Link>
@@ -24,7 +27,10 @@ const MinistriesPage = () => {
           <div className="row-start-2 col-start-1">
             <Link to="/women-ministry">
               <div className="bg-white shadow-md rounded-lg overflow-hidden text-center w-[180px] cursor-pointer hover:shadow-lg transition">
-                <img src="/women.jpg" alt="Women In Ministry" className="w-full h-[160px] object-cover" />
+                <img src="/Women.jpg"
+                alt="Women In Ministry" 
+                className="w-full h-[160px] object-cover" 
+                />
                 <p className="py-2 border-t font-medium text-sm">Women In Ministry</p>
               </div>
             </Link>
@@ -32,15 +38,21 @@ const MinistriesPage = () => {
           <div className="row-start-2 col-start-3">
             <Link to="/youth-ministry">
               <div className="bg-white shadow-md rounded-lg overflow-hidden text-center w-[180px] cursor-pointer hover:shadow-lg transition">
-                <img src="/youth.jpg" alt="Youth Ministry" className="w-full h-[160px] object-cover" />
+                <img src="/Youth.jpg" 
+                alt="Youth Ministry" 
+                className="w-full h-[160px] object-cover" 
+                />
                 <p className="py-2 border-t font-medium text-sm">Youth Ministry</p>
               </div>
             </Link>
           </div>
           <div className="row-start-3 col-start-2">
-            <Link to="/children-ministry">
+            <Link to="/Children-ministry">
               <div className="bg-white shadow-md rounded-lg overflow-hidden text-center w-[180px] cursor-pointer hover:shadow-lg transition">
-                <img src="/children.jpg" alt="Children Ministry" className="w-full h-[160px] object-cover" />
+                <img src="/children.jpg" 
+                alt="Children Ministry" 
+                className="w-full h-[160px] object-cover" 
+                />
                 <p className="py-2 border-t font-medium text-sm">Children Ministry</p>
               </div>
             </Link>
@@ -50,5 +62,4 @@ const MinistriesPage = () => {
     </MainLayout>
   );
 };
-
 export default MinistriesPage;
