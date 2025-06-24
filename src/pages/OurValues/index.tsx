@@ -120,7 +120,7 @@ const ValuesPage = () => {
         />
 
         {/* Value Cards */}
-        <div className="mt-8 flex px-4 md:px-0 flex-wrap font-poppins gap-[43px] justify-center lg:justify-between mx-auto max-w-[934px] ">
+        <div className="mt-8 flex px-4 md:px-0 flex-wrap gap-[43px] justify-center lg:justify-between mx-auto max-w-[934px] ">
           {valuesData.map((value, index) => (
             <ValueCard key={index} {...value} />
           ))}
