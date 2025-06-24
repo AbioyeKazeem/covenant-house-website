@@ -26,7 +26,7 @@ const ChurchLeaders = () => {
     </div>
     <div className="text-center">
       <img
-        src="/children2.jpg"
+        src="/blankplaceholderfemale.jpg"
         alt="Meg Asojo"
         className="w-40 h-40 mx-auto object-cover rounded-xl shadow-md"
       />
@@ -53,7 +53,7 @@ const ChurchLeaders = () => {
     </div>
     <div className="text-center">
       <img
-        src="/children1.jpg"
+        src="/blankplaceholderfemale.jpg"
         alt="Michael Ali"
         className="w-40 h-40 mx-auto object-cover rounded-xl shadow-md"
       />
@@ -89,8 +89,8 @@ const ChurchLeaders = () => {
     </div>
      <div className="text-center">
       <img
-        src="/children1.jpg"
-        alt="Angnes Jade"
+        src="/blankplaceholderfemale.jpg"
+        alt="Minister Stella Fabunmi"
         className="w-40 h-40 mx-auto object-cover rounded-xl shadow-md"
       />
       <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Minister Stella Fabunmi</p>
@@ -98,8 +98,8 @@ const ChurchLeaders = () => {
     </div>
 <div className="text-center">
       <img
-        src="/children1.jpg"
-        alt="Angnes Jade"
+        src="/blankplaceholdermale.jpg"
+        alt="Minister Adeniyi Falade"
         className="w-40 h-40 mx-auto object-cover rounded-xl shadow-md"
       />
       <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Minister Adeniyi Falade</p>
