@@ -35,8 +35,8 @@ const ChurchLeaders = () => {
     </div>
     <div className="text-center">
       <img
-        src="/children3.jpg"
-        alt="David Johnson"
+        src="/blankplaceholderfemale.jpg"
+        alt="Anonymous"
         className="w-40 h-40 mx-auto object-cover rounded-xl shadow-md"
       />
       <p className="mt-0.5 text-sm font-semibold text-[#1D1D1D]">Anonymous</p>
