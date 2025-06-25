@@ -10,7 +10,7 @@ const AdminHeader: React.FC<AdminHeaderProps> = ({ toggleSidebar }) => {
 
   const handleLogout = () => {
     localStorage.removeItem("adminName");
-    localStorage.removeItem("authToken"); // Remove authentication token
+    localStorage.removeItem("authToken"); 
     navigate("/login"); 
   };
 

@@ -208,7 +208,6 @@ const ContactPage = () => {
             <MdEmail className="mx-auto mb-2 w-6 h-6 text-[#2F2860]" />
             <p className="font-semibold">Email Us</p>
             <p>covenanthouserccg@gmail.com</p>
-            <p>info@covenanthouserccg.org</p>
           </div>
 
           {/* Prompt Response */}
@@ -219,7 +218,7 @@ const ContactPage = () => {
             </h4>
 
             <p className="text-center">
-              <strong>Finance:</strong> | Adediwura Aromolaran |{" "}
+              <strong>Finance Department:</strong> {" "}
               <a
                 href="mailto:finance@covenanthouserccg.org"
                 className="text-blue-600 no-underline"
@@ -229,32 +228,32 @@ const ContactPage = () => {
             </p>
 
             <p className="text-center mt-2">
-              <strong>Information and Other Inquiries:</strong> | Esther Oleru |{" "}
+              <strong>Information and Other Inquiries:</strong> {" "}
               <a
-                href="mailto:inquiries@covenanthouserccg.org"
+                href="info@covenanthouserccg.org"
                 className="text-blue-600 no-underline"
               >
-                inquiries@covenanthouserccg.org
+                info@covenanthouserccg.org
               </a>
             </p>
 
             <p className="text-center mt-2">
-              <strong>Facilities:</strong> | Tony Fadele |{" "}
+              <strong>Church Welfare:</strong> {" "}
               <a
                 href="mailto:facilities@covenanthouserccg.org"
                 className="text-blue-600 no-underline"
               >
-                facilities@covenanthouserccg.org
+                welfare@covenanthouserccg.org
               </a>
             </p>
 
             <p className="text-center mt-2">
-              <strong>IT/RPAD:</strong> | Femi Ogunyemi |{" "}
+              <strong>Technical/RPAD:</strong> {" "}
               <a
                 href="mailto:fogunyemi@rccgna.org"
                 className="text-blue-600 no-underline"
               >
-                fogunyemi@rccgna.org
+                 rpad@covenanthouserccg.org
               </a>
             </p>
           </div>
@@ -264,7 +263,7 @@ const ContactPage = () => {
             <MdPhone className="mx-auto mb-2 w-6 h-6 text-[#2F2860]" />
             <p className="font-semibold">Call Us On</p>
             <p>Office: (505) 522-3444</p>
-            <p>Fax: (903) 920-0461</p>
+            {/* <p>Fax: (903) 920-0461</p> */}
           </div>
         </div>
       </div>

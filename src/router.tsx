@@ -42,6 +42,7 @@ import YouthMinistry from "./pages/Ministries/Youth";
 import ChildrenMinistry from "./pages/Ministries/Children";
 import ViewContacts from "./admin/adminPages/viewContact";
 import ViewPrayerRequests from "./admin/adminPages/viewPrayers";
+import ChoirMinistry from "./pages/Ministries/Choir";
 
 function AppRouter() {
   return (
@@ -89,6 +90,7 @@ function AppRouter() {
       <Route path="/women-ministry" element={<WomenMinistry />} />
       <Route path="/youth-ministry" element={<YouthMinistry />} />
       <Route path="/children-ministry" element={<ChildrenMinistry />} />
+      <Route path="/choir-ministry" element={<ChoirMinistry />} />
       </Routes>
   );
 }

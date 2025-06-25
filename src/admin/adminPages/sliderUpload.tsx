@@ -23,12 +23,10 @@ const SliderUpload = () => {
   const [verse, setVerse] = useState("");
   const [editingId, setEditingId] = useState<number | null>(null);
 
-  // Fetch sliders on component mount
   useEffect(() => {
     dispatch(fetchSliders());
   }, [dispatch]);
 
-  // Clear error message after 5 seconds
   useEffect(() => {
     if (error) {
       const timer = setTimeout(() => {
@@ -53,17 +51,13 @@ const SliderUpload = () => {
 
   const handleSubmit = async () => {
     if (editingId !== null) {
-      // Update existing slider
-      if (!title.trim() && !verse.trim()) return;
       await dispatch(updateSlider({ id: editingId, title, verse }));
       dispatch(fetchSliders());
       resetForm();
     } else {
-      // Upload new slider
-      if (!selectedFile || !title.trim() || !verse.trim()) return;
+      if (!selectedFile) return;
       await dispatch(uploadSlider({ image: selectedFile, title, verse }));
       dispatch(fetchSliders());
-
       resetForm();
     }
   };
@@ -101,19 +95,11 @@ const SliderUpload = () => {
     setTitle(slider.title);
     setVerse(slider.verse);
     setEditingId(slider.id);
-    // We don't have the original file when editing, just keeping the text fields
   };
 
-  // Function to handle image URL formatting
   const getImageUrl = (imagePath: string | undefined) => {
-    // Return empty string or a placeholder image if imagePath is not provided
     if (!imagePath) return "";
-
-    // Check if the image path is already a complete URL
-    if (imagePath.startsWith("http")) {
-      return imagePath;
-    }
-    // Otherwise, construct the full URL
+    if (imagePath.startsWith("http")) return imagePath;
     return `https://api.covenanthouserccg.org/${imagePath}`;
   };
 
@@ -132,18 +118,17 @@ const SliderUpload = () => {
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          placeholder="Enter overlay text"
+          placeholder="Enter overlay text (optional)"
           className="border px-3 py-2 w-full rounded text-lg"
         />
         <input
           type="text"
           value={verse}
           onChange={(e) => setVerse(e.target.value)}
-          placeholder="Enter Bible verse"
+          placeholder="Enter Bible verse (optional)"
           className="border px-3 py-2 w-full rounded text-lg"
         />
 
-        {/* Only show file input when not editing */}
         {editingId === null && (
           <input
             type="file"
@@ -163,24 +148,23 @@ const SliderUpload = () => {
                   alt="Preview"
                   className="w-full h-full object-cover rounded-lg shadow"
                 />
-                <div className="absolute bottom-8 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-1 text-xs rounded-b-lg text-sm">
-                  {title || "Preview Title"}
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-1 text-xs rounded-b-lg text-sm">
-                  {verse || "Bible Verse"}
-                </div>
+                {title && (
+                  <div className="absolute bottom-8 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-1 text-xs rounded-b-lg text-sm">
+                    {title}
+                  </div>
+                )}
+                {verse && (
+                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-1 text-xs rounded-b-lg text-sm">
+                    {verse}
+                  </div>
+                )}
               </div>
             )}
 
             <div className="flex gap-2">
               <button
                 onClick={handleSubmit}
-                disabled={
-                  loading ||
-                  (editingId === null && !selectedFile) ||
-                  !title.trim() ||
-                  !verse.trim()
-                }
+                disabled={loading || (editingId === null && !selectedFile)}
                 className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded shadow transition-all disabled:bg-blue-300"
               >
                 {loading ? (
@@ -232,12 +216,16 @@ const SliderUpload = () => {
                   alt={slider.title}
                   className="w-full h-full object-cover rounded-lg"
                 />
-                <div className="absolute bottom-8 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-1 text-xs rounded-b-lg text-sm">
-                  {slider.title}
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-1 text-xs rounded-b-lg text-sm">
-                  {slider.verse}
-                </div>
+                {slider.title && (
+                  <div className="absolute bottom-8 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-1 text-xs rounded-b-lg text-sm">
+                    {slider.title}
+                  </div>
+                )}
+                {slider.verse && (
+                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-1 text-xs rounded-b-lg text-sm">
+                    {slider.verse}
+                  </div>
+                )}
               </div>
 
               <div className="flex flex-col gap-2 mt-3">
@@ -261,7 +249,6 @@ const SliderUpload = () => {
         </div>
       </div>
 
-      {/* Delete confirmation modal */}
       {showDeleteConfirm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">

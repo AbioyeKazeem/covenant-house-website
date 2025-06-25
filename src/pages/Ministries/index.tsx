@@ -12,47 +12,54 @@ const MinistriesPage = () => {
             Serving with Purpose, impacting Lives
           </p>
         </div>
-        <div className="max-w-[898px] mx-auto mt-10 grid grid-cols-3 grid-rows-3 gap-6 justify-items-center items-center">
-          <div className="row-start-1 col-start-2">
+
+        {/* Grid right below the text */}
+        <div className="max-w-[600px] mx-auto mt-0 grid grid-cols-3 grid-rows-3 gap-2 justify-items-center items-center sm:max-w-[640px]">
+          {/* Top Left - Women Ministry */}
+          <div className="row-start-1 col-start-1">
+            <Link to="/women-ministry">
+              <div className="bg-white shadow-md rounded-lg overflow-hidden text-center w-[150px] cursor-pointer hover:shadow-lg transition">
+                <img src="/Women.jpg" alt="Women Ministry" className="w-full h-[130px] object-cover" />
+                <p className="py-2 border-t font-medium text-sm">Women Ministry</p>
+              </div>
+            </Link>
+          </div>
+
+          {/* Top Right - Men Ministry */}
+          <div className="row-start-1 col-start-3">
             <Link to="/men-ministry">
-              <div className="bg-white shadow-md rounded-lg overflow-hidden text-center w-[180px] cursor-pointer hover:shadow-lg transition">
-                <img src="/Men.jpg" 
-                alt="Men Ministry" 
-                className="w-full h-[160px] object-cover" 
-                />
+              <div className="bg-white shadow-md rounded-lg overflow-hidden text-center w-[150px] cursor-pointer hover:shadow-lg transition">
+                <img src="/Men.jpg" alt="Men Ministry" className="w-full h-[130px] object-cover" />
                 <p className="py-2 border-t font-medium text-sm">Men Ministry</p>
               </div>
             </Link>
           </div>
-          <div className="row-start-2 col-start-1">
-            <Link to="/women-ministry">
-              <div className="bg-white shadow-md rounded-lg overflow-hidden text-center w-[180px] cursor-pointer hover:shadow-lg transition">
-                <img src="/Women.jpg"
-                alt="Women In Ministry" 
-                className="w-full h-[160px] object-cover" 
-                />
-                <p className="py-2 border-t font-medium text-sm">Women In Ministry</p>
+
+          {/* Center - Music Ministry */}
+          <div className="row-start-2 col-start-2">
+            <Link to="/choir-ministry">
+              <div className="bg-white shadow-md rounded-lg overflow-hidden text-center w-[150px] cursor-pointer hover:shadow-lg transition">
+                <img src="/music_ministry.jpg" alt="Music Ministry" className="w-full h-[130px] object-cover" />
+                <p className="py-2 border-t font-medium text-sm">Music Ministry</p>
               </div>
             </Link>
           </div>
-          <div className="row-start-2 col-start-3">
+
+          {/* Bottom Left - Youth Ministry */}
+          <div className="row-start-3 col-start-1">
             <Link to="/youth-ministry">
-              <div className="bg-white shadow-md rounded-lg overflow-hidden text-center w-[180px] cursor-pointer hover:shadow-lg transition">
-                <img src="/Youth.jpg" 
-                alt="Youth Ministry" 
-                className="w-full h-[160px] object-cover" 
-                />
+              <div className="bg-white shadow-md rounded-lg overflow-hidden text-center w-[150px] cursor-pointer hover:shadow-lg transition">
+                <img src="/Youth.jpg" alt="Youth Ministry" className="w-full h-[130px] object-cover" />
                 <p className="py-2 border-t font-medium text-sm">Youth Ministry</p>
               </div>
             </Link>
           </div>
-          <div className="row-start-3 col-start-2">
+
+          {/* Bottom Right - Children Ministry */}
+          <div className="row-start-3 col-start-3">
             <Link to="/Children-ministry">
-              <div className="bg-white shadow-md rounded-lg overflow-hidden text-center w-[180px] cursor-pointer hover:shadow-lg transition">
-                <img src="/children.jpg" 
-                alt="Children Ministry" 
-                className="w-full h-[160px] object-cover" 
-                />
+              <div className="bg-white shadow-md rounded-lg overflow-hidden text-center w-[150px] cursor-pointer hover:shadow-lg transition">
+                <img src="/children.jpg" alt="Children Ministry" className="w-full h-[130px] object-cover" />
                 <p className="py-2 border-t font-medium text-sm">Children Ministry</p>
               </div>
             </Link>
@@ -62,4 +69,5 @@ const MinistriesPage = () => {
     </MainLayout>
   );
 };
+
 export default MinistriesPage;

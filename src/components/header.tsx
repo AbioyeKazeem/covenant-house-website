@@ -88,11 +88,13 @@ const Header = () => {
           <Link to="#" className="hover:text-lightpurple">
             rPAD
           </Link>{" "}
-          |
+
+          {/* |
           <Link to="/login" className="hover:text-lightpurple">
             {" "}
             ADMIN
-          </Link>
+          </Link> */}
+          
         </div>
 
         {/* Mobile Menu Button */}
