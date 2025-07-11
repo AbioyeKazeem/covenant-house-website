@@ -17,6 +17,9 @@ const EventDetails: React.FC = () => {
   // Find the specific event by ID
   const event = events.find((e) => e.id === parseInt(id || "0"));
 
+  console.log({event});
+  
+
   useEffect(() => {
     // Fetch events if not already loaded
     if (events.length === 0) {
@@ -139,7 +142,7 @@ const EventDetails: React.FC = () => {
                         Time:
                       </h3>
                       <p className="text-2xl font-poppins font-medium">
-                        {formatTime(event.date)}
+                        {formatTime(event.created_at)}
                       </p>
                     </div>
                     <div>
