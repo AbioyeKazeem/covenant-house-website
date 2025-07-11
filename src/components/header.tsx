@@ -173,7 +173,7 @@ const Header = () => {
             to="/donate"
             className="bg-gray-200 text-gray-900 px-4 py-1 rounded-md text-sm"
           >
-            DONATE
+            GIVE
           </NavLink>
         </div>
       </div>

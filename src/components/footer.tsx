@@ -48,6 +48,14 @@ const Footer = () => {
                     Children Ministry
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    to="/choir-ministry"
+                    className="text-gray-300 hover:text-white transition-colors border-b border-[#F2F0FAD9] pb-1 inline-block"
+                  >
+                    Choir Ministry
+                  </Link>
+                </li>
               </ul>
               <div className="mt-6">
                 <button

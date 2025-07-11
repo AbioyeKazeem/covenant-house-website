@@ -16,6 +16,7 @@ interface EventFormData {
   description: string;
   ministry: string;
   date: string;
+  // time:string;
   venue: string;
 }
 
@@ -31,6 +32,7 @@ const EventUpload: React.FC = () => {
     description: "",
     ministry: "",
     date: "",
+    // time: "",
     venue: "",
   });
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
@@ -115,6 +117,7 @@ const EventUpload: React.FC = () => {
       !formData.description.trim() ||
       !formData.ministry.trim() ||
       !formData.date.trim() ||
+      // !formData.time.trim() ||
       !formData.venue.trim() ||
       (!selectedImage && !editingId)
     ) {
@@ -130,8 +133,8 @@ const EventUpload: React.FC = () => {
     eventFormData.append("description", formData.description);
     eventFormData.append("ministry", formData.ministry);
     eventFormData.append("date", formData.date);
+    // eventFormData.append("time", formData.time);
     eventFormData.append("venue", formData.venue);
-
     if (selectedImage) {
       eventFormData.append("eventImage", selectedImage);
     }
@@ -167,6 +170,7 @@ const EventUpload: React.FC = () => {
       description: event.description || "",
       ministry: event.ministry || "",
       date: event.date,
+      // time:event.time,
       venue: event.venue,
     });
     setImagePreview(event.image);
@@ -182,6 +186,7 @@ const EventUpload: React.FC = () => {
       description: "",
       ministry: "",
       date: "",
+      // time: "",
       venue: "",
     });
     setSelectedImage(null);
@@ -296,6 +301,21 @@ const EventUpload: React.FC = () => {
             required
           />
         </div>
+
+        {/* Time */}
+        {/* <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            time (required)
+          </label>
+          <input
+            type="time"
+            name="time"
+            value={formData.time}
+            onChange={handleInputChange}
+            className="border p-3 w-full rounded-lg"
+            required
+          />
+        </div> */}
 
         {/* Venue */}
         <div>
